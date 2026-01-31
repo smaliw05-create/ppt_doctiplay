@@ -868,17 +868,17 @@ summary .pill-small {
 }
 
 .centered-hero {
-  margin-top: 40px;
-  /* Increased margin to push hero content below the menu bar */
+  margin-top: 20px;
+  /* Reduced to fit better */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hero-logo-icon {
-  height: 70px;
-  /* Slightly reduced height to fit better */
-  margin-bottom: 20px;
+  height: 50px;
+  /* Reduced from 70px */
+  margin-bottom: 12px;
   display: flex;
   justify-content: center;
 }
@@ -890,7 +890,8 @@ summary .pill-small {
 
 .hero-title {
   display: block;
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  /* Reduced from 3-8vw */
   color: #ffffff;
   font-weight: 900;
   line-height: 1.0;
@@ -915,16 +916,20 @@ summary .pill-small {
 }
 
 .centered-subtitle {
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
-  margin-top: 15px;
+  font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+  /* Reduced from 1-1.3rem */
+  margin-top: 10px;
+  /* Reduced from 15px */
   max-width: 800px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
+  /* Slightly dimmer */
   line-height: 1.4;
 }
 
 .hero-visual {
-  margin-top: 50px;
+  margin-top: 25px;
+  /* Reduced from 50px */
   perspective: 1000px;
   width: 100%;
   display: flex;
@@ -933,7 +938,8 @@ summary .pill-small {
 
 .floating-tablet {
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
+  /* Reduced from 600px */
   height: auto;
   border-radius: 20px;
   box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5), 0 30px 60px -30px rgba(0, 242, 255, 0.2);
@@ -1062,10 +1068,68 @@ summary .pill-small {
 }
 
 .deck-footer-note {
-  margin-top: 56px;
-  font-size: 0.95rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.4);
-  text-align: center;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  margin-top: 24px;
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 35px;
+  /* Adjust to stay within border */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 250;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scroll-arrow:hover {
+  color: var(--primary-cyan);
+  transform: translateX(-50%) translateY(4px);
+}
+
+.scroll-arrow svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.5px;
+  fill: none;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(3px);
+  }
+}
+
+.scroll-arrow svg {
+  animation: bounce 2s infinite;
 }
