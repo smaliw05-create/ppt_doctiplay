@@ -925,10 +925,15 @@ summary .pill-small {
   }
 }
 
+.deck-cards {
+  gap: 32px !important;
+  margin-top: 16px;
+}
+
 /* Pitch Deck Slides - Layout Correction */
 .pitch-slide {
   justify-content: flex-start !important;
-  padding-top: 100px !important;
+  padding-top: 88px !important;
 }
 
 .ultra-title {
@@ -941,8 +946,9 @@ summary .pill-small {
 
 .single-line {
   font-size: 1.05rem;
-  max-width: 850px;
-  margin: 0 auto 80px;
+  max-width: 720px;
+  line-height: 1.5;
+  margin: 0 auto 64px;
 }
 
 .teal-highlight {
@@ -954,9 +960,9 @@ summary .pill-small {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 40px !important;
-  min-height: 380px;
-  justify-content: center;
+  padding: 32px !important;
+  min-height: 360px;
+  justify-content: flex-start;
 }
 
 .tag-capsule {
@@ -975,8 +981,10 @@ summary .pill-small {
 }
 
 .horizontal-card h3 {
-  font-size: 1.75rem;
-  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
 }
 
 .deck-list {
@@ -984,30 +992,32 @@ summary .pill-small {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  max-width: 320px;
 }
 
 .deck-list li {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  font-size: 1.05rem;
-  line-height: 1.4;
+  gap: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .deck-list li .chevron {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--primary-cyan);
   flex-shrink: 0;
   margin-top: 4px;
 }
 
 .deck-footer-note {
-  margin-top: 60px;
+  margin-top: 48px;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.65);
   text-align: center;
   font-weight: 400;
+  letter-spacing: 0.01em;
 }
