@@ -712,10 +712,14 @@ ul.clean li::before {
 
 /* Appendix */
 .appendix {
-  height: auto !important;
-  scroll-snap-align: none;
-  padding: 90px 18px 120px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.90));
+  height: 100vh !important;
+  scroll-snap-align: start !important;
+  padding: 120px 18px 60px !important;
+  background: var(--bg-dark);
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  overflow-y: auto !important;
 }
 
 details {
