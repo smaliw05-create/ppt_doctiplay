@@ -75,18 +75,31 @@ body::before {
   backdrop-filter: blur(10px);
 }
 
-.brand-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--primary-cyan);
-  box-shadow: var(--glow-strong);
+.brand-logo {
+  height: 24px;
+  display: flex;
+  align-items: center;
 }
 
-.brand span {
+.brand-logo svg {
+  height: 100%;
+  filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.4));
+}
+
+.logo-text {
   font-weight: 900;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.logo-text span {
+  color: var(--primary-cyan);
+}
+
+.cyan-text {
+  color: var(--primary-cyan) !important;
 }
 
 .nav {
@@ -858,17 +871,31 @@ summary .pill-small {
   gap: 10px;
 }
 
+.hero-logo-icon {
+  height: 80px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo-icon svg {
+  height: 100%;
+  filter: drop-shadow(0 0 30px rgba(0, 242, 255, 0.4));
+}
+
 .hero-title {
   display: block;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  background: linear-gradient(135deg, #fff 0%, var(--primary-cyan) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #ffffff;
   font-weight: 900;
   line-height: 1.0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.15));
+}
+
+.hero-title span {
+  color: var(--primary-cyan);
 }
 
 .hero-accent {
