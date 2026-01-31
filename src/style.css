@@ -942,7 +942,7 @@ summary .pill-small {
 .single-line {
   font-size: 1.05rem;
   max-width: 850px;
-  margin: 0 auto 40px;
+  margin: 0 auto 80px;
 }
 
 .teal-highlight {
@@ -954,8 +954,9 @@ summary .pill-small {
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 30px !important;
-  min-height: 350px;
+  padding: 40px !important;
+  min-height: 380px;
+  justify-content: center;
 }
 
 .tag-capsule {
@@ -1004,7 +1005,7 @@ summary .pill-small {
 }
 
 .deck-footer-note {
-  margin-top: 80px;
+  margin-top: 60px;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.45);
   text-align: center;
