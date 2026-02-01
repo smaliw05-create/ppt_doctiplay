@@ -12,7 +12,13 @@
   --radius-xl: 24px;
   --radius-lg: 16px;
   --radius-pill: 999px;
-  --maxw: 1000px;
+  --maxw: 1100px;
+
+  /* Global Template Tokens */
+  --frame-top: 115px;
+  --frame-side: 20px;
+  --frame-bottom: 20px;
+  --header-height: 140px;
 }
 
 * {
@@ -178,33 +184,55 @@ section {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 85px 18px 40px;
+  padding: var(--frame-top) var(--frame-side) var(--frame-bottom);
   position: relative;
   overflow: hidden;
 }
 
-/* Slide Frame */
+/* Slide Frame - Unified Gabarit */
 section::after {
   content: "";
   position: absolute;
-  top: 115px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  /* Plus visible pour l'export PDF */
-  border-radius: 24px;
+  top: var(--frame-top);
+  left: var(--frame-side);
+  right: var(--frame-side);
+  bottom: var(--frame-bottom);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xl);
   pointer-events: none;
   z-index: 200;
-  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
+/* Standard Structure */
 .inner {
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
+  /* Safe area inside frame */
+}
+
+.slide-header {
+  height: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.slide-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Unified baseline */
+  align-items: center;
+  width: 100%;
 }
 
 /* Progress bar */
@@ -890,21 +918,20 @@ ul.clean li::before {
 }
 
 .ultra-title {
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem) !important;
+  font-size: clamp(1.6rem, 4vw, 2.4rem) !important;
+  /* Slightly reduced for safe-area */
   font-weight: 900;
-  letter-spacing: -0.03em;
-  margin-top: 0;
-  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
   width: 100%;
-  max-width: 1100px;
 }
 
 .single-line {
-  font-size: 0.95rem;
-  max-width: 620px;
-  line-height: 1.6;
-  margin: 0 auto 40px;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .teal-highlight {
@@ -2379,11 +2406,10 @@ ul.clean li::before {
     background: #050a14 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-    height: auto !important;
-    overflow: visible !important;
+    height: 100% !important;
+    overflow: hidden !important;
   }
 
-  /* Hide UI elements */
   .topbar,
   .progress-bar,
   .scroll-arrow,
@@ -2400,78 +2426,68 @@ ul.clean li::before {
     margin: 0 !important;
   }
 
-  /* Fixed slide dimensions for A4 Landscape */
   section {
     width: 297mm !important;
     height: 210mm !important;
     page-break-after: always !important;
     page-break-inside: avoid !important;
     position: relative !important;
-    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex !important;
-    flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    padding: 25mm !important;
-    /* Constant inner padding for all slides */
-    margin: 0 !important;
     background: #050a14 !important;
   }
 
-  /* Normalized Frame for all slides in print */
   section::after {
     content: "" !important;
     position: absolute !important;
-    top: 25mm !important;
-    /* Fixed frame position */
-    left: 15mm !important;
-    right: 15mm !important;
-    bottom: 15mm !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    border-radius: 20px !important;
-    z-index: 200 !important;
-    box-shadow: none !important;
+    top: 15mm !important;
+    left: 10mm !important;
+    right: 10mm !important;
+    bottom: 10mm !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     display: block !important;
-  }
-
-  /* Slide 1 - Special override to keep it consistent with others in print */
-  #slide-1::after {
-    top: 25mm !important;
+    z-index: 200 !important;
+    border-radius: 20px !important;
   }
 
   .inner {
-    width: 100% !important;
-    max-width: 260mm !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
+    padding: 24mm !important;
+    max-width: 100% !important;
+    height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
   }
 
-  /* Force visibility and reset animations */
+  .slide-header {
+    height: 35mm !important;
+    margin-bottom: 5mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .slide-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+
   .reveal {
     opacity: 1 !important;
     transform: none !important;
     visibility: visible !important;
-    animation: none !important;
     transition: none !important;
+    animation: none !important;
   }
 
-  /* Remove all automatic transform/scaling */
   * {
     transform: none !important;
-  }
-
-  /* Keep visual elements visible */
-  .hero-product-wrap,
-  .hero-visual,
-  .tablet-frame {
-    display: block !important;
-    visibility: visible !important;
-    transform: none !important;
-    margin-top: 5mm !important;
   }
 
   body::before {
