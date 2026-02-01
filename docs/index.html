@@ -11,8 +11,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="./assets/index-Dr5Exl3Z.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index--7yLzB13.css">
+  <script type="module" crossorigin src="./assets/index-ICm8KaR_.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-_Q1IKVOL.css">
 </head>
 
 <body>
@@ -41,6 +41,17 @@
 
     <div class="top-actions">
       <a href="https://Doctiplay.com" target="_blank" class="btn-top">Tester le simulateur</a>
+      <button id="pdf-export-btn" class="btn-top" title="Exporter en PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          style="width: 14px; height: 14px; margin-right: 6px;">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>PDF</span>
+      </button>
     </div>
   </div>
 
@@ -93,7 +104,7 @@
             <div class="tablet-frame"
               style="position: relative; border-radius: 24px; overflow: hidden; border: 4px solid #1a1a1a; box-shadow: 0 0 30px rgba(0,242,255,0.05);">
               <div class="tablet-camera"></div>
-              <img src="Doctiplay_screen_actual.png" alt="Doctiplay Game Interface" class="hero-tablet-img"
+              <img src="doctiplay_screen_actual.png" alt="Doctiplay Game Interface" class="hero-tablet-img"
                 style="display: block; width: 100%; height: auto;">
             </div>
           </div>
@@ -464,8 +475,9 @@
     <section id="slide-5" class="pitch-slide">
       <div class="inner">
         <div class="slide-header">
-          <h2 class="reveal ultra-title">Comment Doctiplay fonctionne ?</h2>
-          <p class="subtitle reveal single-line">Un parcours fluide de la prise en main au débriefing.</p>
+          <h2 class="reveal ultra-title">Doctiplay : un cas clinique en 5 étapes (de l’objectif au débrief)</h2>
+          <p class="subtitle reveal single-line">L’étudiant prend des décisions. Le simulateur met à jour les constantes
+            en temps réel, puis génère un feedback + un PDF.</p>
         </div>
         <div class="slide-content">
           <div class="timeline-ui reveal">
@@ -499,7 +511,7 @@
               </div>
               <div class="step-text">
                 <h4>Brief</h4>
-                <span>Objectif & contexte</span>
+                <span>Objectif + contexte + données patient</span>
               </div>
             </div>
 
@@ -536,7 +548,7 @@
               </div>
               <div class="step-text">
                 <h4>Simulation</h4>
-                <span>Décisions live</span>
+                <span>Décisions : examens / traitements → constantes qui réagissent</span>
               </div>
             </div>
 
@@ -565,7 +577,7 @@
               </div>
               <div class="step-text">
                 <h4>Feedback</h4>
-                <span>Points clés</span>
+                <span>Score + erreurs critiques + points clés</span>
               </div>
             </div>
 
@@ -593,7 +605,7 @@
               </div>
               <div class="step-text">
                 <h4>Débriefing</h4>
-                <span>Analyse guidée</span>
+                <span>Analyse guidée + plan d’amélioration</span>
               </div>
             </div>
 
@@ -623,9 +635,12 @@
               </div>
               <div class="step-text">
                 <h4>Suivi</h4>
-                <span>Progression</span>
+                <span>Progression + comparaison + export PDF</span>
               </div>
             </div>
+          </div>
+          <div class="reveal timeline-footer-note">
+            Résultat : simulation répétable, mesurable, comparable.
           </div>
         </div> <!-- slide-content -->
       </div>
@@ -635,195 +650,6 @@
     </section>
 
     <!-- SLIDE 6: INTEGRATION -->
-    <section id="slide-6" class="pitch-slide">
-      <div class="inner">
-        <div class="slide-header">
-          <h2 class="reveal ultra-title">Intégration dans le parcours IFSI</h2>
-          <p class="subtitle reveal single-line">S’intègre dans le planning existant : avant, pendant, après le stage.
-          </p>
-        </div>
-        <div class="slide-content">
-          <div class="ui-pill-caps-wrap reveal" style="margin-top: 10px;">
-            <div class="ui-pill-caps">Micro-simulations • Rejouables • Mesurables</div>
-          </div>
-          <div class="card-grid reveal deck-cards feature-grid">
-            <!-- Card 1: Avant Stage -->
-            <div class="card col-4 feature-card">
-              <div class="feature-header">
-                <div class="feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                  </svg>
-                </div>
-                <div class="tag-capsule">PRÉPARATION</div>
-              </div>
-              <h3>Avant stage</h3>
-              <ul class="clean" style="margin-top: 10px;">
-                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Objectif&nbsp;:</strong><br>
-                  Sécuriser
-                  bases avant exposition réelle</li>
-                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Format&nbsp;:</strong><br>
-                  Micro-simulations + checklist réflexes</li>
-              </ul>
-            </div>
-
-            <!-- Card 2: En Td -->
-            <div class="card col-4 feature-card">
-              <div class="feature-header">
-                <div class="feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <div class="tag-capsule">ENTRAÎNEMENT</div>
-              </div>
-              <h3>En TD</h3>
-              <ul class="clean" style="margin-top: 10px;">
-                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Objectif&nbsp;:</strong><br>
-                  Entraînement groupe + coordination</li>
-                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Format&nbsp;:</strong><br> Session
-                  +
-                  débriefing guidé formateur</li>
-              </ul>
-            </div>
-
-            <!-- Card 3: Après Stage -->
-            <div class="card col-4 feature-card">
-              <div class="feature-header">
-                <div class="feature-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <div class="tag-capsule">CONSOLIDATION</div>
-              </div>
-              <h3>Après stage</h3>
-              <ul class="clean" style="margin-top: 10px;">
-                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Objectif&nbsp;:</strong><br>
-                  Remédiation ciblée / erreurs fréquentes</li>
-                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Format&nbsp;:</strong><br> Rejouer
-                  +
-                  suivi progression</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="trust-badges-row reveal">
-            <div class="trust-badge">⚡ Zéro logistique</div>
-            <div class="trust-badge">🌐 100% web</div>
-            <div class="trust-badge">💿 Sans installation</div>
-            <div class="trust-badge">🔒 Données fictives / Conforme au règlement général sur la protection des données
-            </div>
-            <div class="trust-badge">📊 Export PDF + Suivi</div>
-          </div>
-        </div> <!-- slide-content -->
-      </div>
-      <a href="#slide-implementation" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5" />
-        </svg></a>
-    </section>
-
-    <!-- SLIDE 6b: IMPLEMENTATION -->
-    <section id="slide-implementation" class="pitch-slide">
-      <div class="inner">
-        <div class="slide-header">
-          <h2 class="reveal ultra-title">Lancer un pilote IFSI, simplement</h2>
-          <p class="subtitle reveal single-line">3 étapes, sans bouleverser l’organisation pédagogique.</p>
-        </div>
-
-        <div class="slide-content">
-          <div class="split-layout-refined reveal">
-
-            <!-- Card 1: Pré-pilote -->
-            <div class="card feature-card big-card-refined">
-              <div class="feature-header">
-                <div class="tag-capsule">ÉTAPE 1</div>
-                <div class="feature-icon" style="margin-left: auto; margin-right:0;">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 11l3 3L22 4"></path>
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                  </svg>
-                </div>
-              </div>
-              <h3>Pré-pilote léger <span
-                  style="font-size:0.65em; opacity:0.6; font-weight:400; display:block; margin-top:4px;">(Validation
-                  terrain)</span></h3>
-              <ul class="clean">
-                <li>
-                  <strong style="color:var(--primary-cyan)">Équipe :</strong> Pédagogique (2–3 référents)
-                </li>
-                <li>
-                  <strong style="color:var(--primary-cyan)">Mise en place :</strong> Relecture scénario test
-                </li>
-                <li>
-                  <strong style="color:var(--primary-cyan)">Action :</strong> 1/2 journée test en sous-groupe
-                </li>
-                <li>
-                  <strong style="color:var(--primary-cyan)">Bilan :</strong> Évaluation avant/après + retours
-                </li>
-              </ul>
-            </div>
-
-            <!-- Connector -->
-            <div class="connector-column">
-              <div class="connector-line-arrow"></div>
-              <div class="connector-label">Si pré-pilote validé &rarr; Pilote</div>
-            </div>
-
-            <!-- Card 2: Pilote -->
-            <div class="card feature-card big-card-refined">
-              <div class="feature-header">
-                <div class="tag-capsule">ÉTAPE 2</div>
-                <div class="feature-icon" style="margin-left: auto; margin-right:0;">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                    <line x1="12" y1="17" x2="12" y2="21"></line>
-                  </svg>
-                </div>
-              </div>
-              <h3>Pilote <span
-                  style="font-size:0.65em; opacity:0.6; font-weight:400; display:block; margin-top:4px;">(Déploiement
-                  cadré)</span></h3>
-              <ul class="clean">
-                <li>
-                  <strong style="color:var(--primary-cyan)">Durée :</strong> 4 semaines
-                </li>
-                <li>
-                  <strong style="color:var(--primary-cyan)">Scénarios :</strong> 3 scénarios validés pédagogiquement
-                </li>
-                <li>
-                  <strong style="color:var(--primary-cyan)">Format :</strong> Sessions sous-groupes / promotion
-                </li>
-                <li>
-                  <strong style="color:var(--primary-cyan)">Suivi :</strong> Retours utilisateurs + itérations
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="deliverables-compact-row reveal">
-            <span class="deliverables-label-small">LIVRABLES :</span>
-            <div class="deliverable-chip">Plan de pilotage</div>
-            <div class="deliverable-chip">Rapport d’évaluation</div>
-            <div class="deliverable-chip">Export PDF</div>
-            <div class="deliverable-chip">Bilan de promotion</div>
-          </div>
-        </div> <!-- slide-content -->
-      </div>
-      <a href="#slide-scenarios" class="scroll-arrow reveal" aria-label="Slide suivante">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5" />
-        </svg>
-      </a>
-    </section>
-
-    <!-- SLIDE SCENARIOS: SCENARIOS SOCLE (Moved) -->
     <section id="slide-scenarios" class="pitch-slide">
       <div class="inner">
         <div class="slide-header">
@@ -952,6 +778,296 @@
           <path d="M7 10l5 5 5-5" />
         </svg></a>
     </section>
+    <section id="slide-6" class="pitch-slide">
+      <div class="inner">
+        <div class="slide-header">
+          <h2 class="reveal ultra-title">Intégration dans le parcours IFSI</h2>
+          <p class="subtitle reveal single-line">S’intègre dans le planning existant : avant, pendant, après le stage.
+          </p>
+        </div>
+        <div class="slide-content">
+          <div class="ui-pill-caps-wrap reveal" style="margin-top: 10px;">
+            <div class="ui-pill-caps">Micro-simulations • Rejouables • Mesurables</div>
+          </div>
+          <div class="card-grid reveal deck-cards feature-grid">
+            <!-- Card 1: Avant Stage -->
+            <div class="card col-4 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                  </svg>
+                </div>
+                <div class="tag-capsule">PRÉPARATION</div>
+              </div>
+              <h3>Avant stage</h3>
+              <ul class="clean" style="margin-top: 10px;">
+                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Objectif&nbsp;:</strong><br>
+                  Sécuriser
+                  bases avant exposition réelle</li>
+                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Format&nbsp;:</strong><br>
+                  Micro-simulations + checklist réflexes</li>
+              </ul>
+            </div>
+
+            <!-- Card 2: En Td -->
+            <div class="card col-4 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="tag-capsule">ENTRAÎNEMENT</div>
+              </div>
+              <h3>En TD</h3>
+              <ul class="clean" style="margin-top: 10px;">
+                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Objectif&nbsp;:</strong><br>
+                  Entraînement groupe + coordination</li>
+                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Format&nbsp;:</strong><br> Session
+                  +
+                  débriefing guidé formateur</li>
+              </ul>
+            </div>
+
+            <!-- Card 3: Après Stage -->
+            <div class="card col-4 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div class="tag-capsule">CONSOLIDATION</div>
+              </div>
+              <h3>Après stage</h3>
+              <ul class="clean" style="margin-top: 10px;">
+                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Objectif&nbsp;:</strong><br>
+                  Remédiation ciblée / erreurs fréquentes</li>
+                <li><strong style="color:var(--primary-cyan); white-space:nowrap;">→ Format&nbsp;:</strong><br> Rejouer
+                  +
+                  suivi progression</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="trust-badges-row reveal">
+            <div class="trust-badge">⚡ Zéro logistique</div>
+            <div class="trust-badge">🌐 100% web</div>
+            <div class="trust-badge">💿 Sans installation</div>
+            <div class="trust-badge">🔒 Données fictives / Conforme au règlement général sur la protection des données
+            </div>
+            <div class="trust-badge">📊 Export PDF + Suivi</div>
+          </div>
+        </div> <!-- slide-content -->
+      </div>
+      <a href="#slide-briques" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg></a>
+    </section>
+
+    <!-- NEW SLIDE: 4 BRIQUES IMPACT -->
+    <section id="slide-briques" class="pitch-slide">
+      <div class="inner">
+        <div class="slide-header">
+          <h2 class="reveal ultra-title">Ce que ces 4 briques changent en formation</h2>
+          <p class="subtitle reveal single-line">Des sessions plus réalistes, répétables et mesurables — sans alourdir
+            l’équipe pédagogique.</p>
+        </div>
+        <div class="slide-content">
+          <div class="card-grid reveal deck-cards feature-grid">
+            <!-- Card 1 -->
+            <div class="card col-3 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3>Raisonnement clinique</h3>
+              <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Décisions → effets sur constantes /
+                apprentissage cause-conséquence</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card col-3 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9 12l2 2 4-4"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3>Évaluation objective</h3>
+              <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Score + erreurs critiques + temps /
+                avant-après comparable</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card col-3 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3>Débrief structuré</h3>
+              <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Feedback instant + débrief guidé / plan
+                d’amélioration</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card col-3 feature-card">
+              <div class="feature-header">
+                <div class="feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3>Suivi & traçabilité</h3>
+              <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">Progression + export PDF formateur</p>
+            </div>
+          </div>
+          <div class="reveal"
+            style="margin-top: 60px; text-align: center; opacity: 0.5; font-size: 0.8rem; font-family: 'IBM Plex Mono', monospace; font-weight: 600; color: var(--primary-cyan); text-transform: uppercase; letter-spacing: 0.1em;">
+            Même cas, mêmes critères → progrès comparables.
+          </div>
+        </div>
+      </div>
+      <a href="#slide-implementation" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg></a>
+    </section>
+
+    <!-- SLIDE 6b: IMPLEMENTATION -->
+    <section id="slide-implementation" class="pitch-slide">
+      <div class="inner">
+        <div class="slide-header">
+          <h2 class="reveal ultra-title">Lancer un pilote IFSI, simplement</h2>
+          <p class="subtitle reveal single-line">3 étapes, sans bouleverser l’organisation pédagogique.</p>
+        </div>
+
+        <div class="slide-content">
+          <div class="split-layout-refined reveal">
+
+            <!-- Card 1: Pré-pilote -->
+            <div class="card feature-card big-card-refined">
+              <div class="feature-header">
+                <div class="tag-capsule">ÉTAPE 1</div>
+              </div>
+              <h3>Pré-pilote <span
+                  style="font-size:0.65em; opacity:0.6; font-weight:400; display:block; margin-top:4px;">(Validation
+                  terrain)</span></h3>
+              <ul class="clean">
+                <li>• Équipe : 1 référent pédagogique</li>
+                <li>• 1/2 journée test (sous-groupe)</li>
+                <li>• <strong>Go/No-Go</strong> après pré-pilote</li>
+              </ul>
+            </div>
+
+            <!-- Connector -->
+            <div class="connector-column">
+              <div class="connector-line-arrow"></div>
+            </div>
+
+            <!-- Card 2: Pilote -->
+            <div class="card feature-card big-card-refined">
+              <div class="feature-header">
+                <div class="tag-capsule">ÉTAPE 2</div>
+              </div>
+              <h3>Pilote <span
+                  style="font-size:0.65em; opacity:0.6; font-weight:400; display:block; margin-top:4px;">(Déploiement
+                  cadré)</span></h3>
+              <ul class="clean">
+                <li>• Durée : 4 semaines</li>
+                <li>• 3 cas cliniques validés</li>
+                <li>• Promotion ou groupes</li>
+              </ul>
+            </div>
+
+            <!-- Connector -->
+            <div class="connector-column">
+              <div class="connector-line-arrow"></div>
+            </div>
+
+            <!-- Card 3: Bilan -->
+            <div class="card feature-card big-card-refined">
+              <div class="feature-header">
+                <div class="tag-capsule">ÉTAPE 3</div>
+              </div>
+              <h3>Bilan & décision <span
+                  style="font-size:0.65em; opacity:0.6; font-weight:400; display:block; margin-top:4px;">(Perspectives)</span>
+              </h3>
+              <ul class="clean">
+                <li>• Rapport d’impact complet</li>
+                <li>• Exports PDF individuels/promo</li>
+                <li>• Décision extension / intégration</li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-- Resource Block -->
+          <div class="reveal resource-split-row"
+            style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="resource-col"
+              style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 20px;">
+              <h4
+                style="color: var(--primary-cyan); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="width: 12px; height: 12px;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                Vous mobilisez
+              </h4>
+              <ul class="clean"
+                style="font-size: 0.75rem; line-height: 1.4; color: rgba(255,255,255,0.8); display: flex; gap: 15px; flex-wrap: wrap;">
+                <li>• 1 référent pédagogique</li>
+                <li>• 1h onboarding</li>
+                <li>• 1 créneau test</li>
+                <li>• Salle PC ou distanciel</li>
+              </ul>
+            </div>
+            <div class="resource-col"
+              style="background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 12px; padding: 12px 20px;">
+              <h4
+                style="color: var(--primary-cyan); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  style="width: 12px; height: 12px;">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                On fournit
+              </h4>
+              <ul class="clean"
+                style="font-size: 0.75rem; line-height: 1.4; color: rgba(255,255,255,0.8); display: flex; gap: 15px; flex-wrap: wrap;">
+                <li>• Scénarios + guide</li>
+                <li>• Support technique</li>
+                <li>• Rapport d’évaluation</li>
+                <li>• Exports PDF</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div> <!-- slide-content -->
+      </div>
+      <a href="#slide-scenarios" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- SLIDE SCENARIOS: SCENARIOS SOCLE (Moved) -->
 
     <!-- NEW SLIDE: MESURER L'IMPACT (Pilote IFSI) -->
     <section id="slide-impact" class="pitch-slide">
@@ -1091,13 +1207,13 @@
                   Fréquence d'usage (Semaine)</div>
                 <!-- Simple Heatmap-like blocks -->
                 <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; height: 40px;">
-                  <div style="background:rgba(6,177,255,0.2); border-radius:2px;"></div>
-                  <div style="background:rgba(6,177,255,0.5); border-radius:2px;"></div>
-                  <div style="background:rgba(6,177,255,0.8); border-radius:2px;"></div>
-                  <div style="background:rgba(6,177,255,0.9); border-radius:2px;"></div>
-                  <div style="background:rgba(6,177,255,0.6); border-radius:2px;"></div>
-                  <div style="background:rgba(6,177,255,0.3); border-radius:2px;"></div>
-                  <div style="background:rgba(6,177,255,0.1); border-radius:2px;"></div>
+                  <div style="background:rgba(6,177,255,0.4); border-radius:3px;"></div>
+                  <div style="background:rgba(6,177,255,0.15); border-radius:3px;"></div>
+                  <div style="background:rgba(6,177,255,0.7); border-radius:3px;"></div>
+                  <div style="background:rgba(6,177,255,0.95); border-radius:3px;"></div>
+                  <div style="background:rgba(6,177,255,0.3); border-radius:3px;"></div>
+                  <div style="background:rgba(6,177,255,0.6); border-radius:3px;"></div>
+                  <div style="background:rgba(6,177,255,0.25); border-radius:3px;"></div>
                 </div>
                 <div
                   style="font-size: 0.7rem; color: #fff; text-align: right; margin-top: 10px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
@@ -1335,16 +1451,7 @@
 
   </div>
 
-  <button id="pdf-export-btn" class="pdf-fab" title="Exporter en PDF">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-      <polyline points="14 2 14 8 20 8"></polyline>
-      <line x1="16" y1="13" x2="8" y2="13"></line>
-      <line x1="16" y1="17" x2="8" y2="17"></line>
-      <polyline points="10 9 9 9 8 9"></polyline>
-    </svg>
-    <span>PDF</span>
-  </button>
+
 
 </body>
 
