@@ -32,7 +32,7 @@ body {
   color: var(--text-white);
   overflow-x: hidden;
   line-height: 1.5;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
 }
 
 /* Ambient background */
@@ -890,7 +890,7 @@ ul.clean li::before {
 }
 
 .ultra-title {
-  font-size: clamp(2rem, 5vw, 3.2rem) !important;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem) !important;
   font-weight: 900;
   letter-spacing: -0.03em;
   margin-top: 0;
@@ -900,8 +900,8 @@ ul.clean li::before {
 }
 
 .single-line {
-  font-size: 1.05rem;
-  max-width: 680px;
+  font-size: 0.95rem;
+  max-width: 620px;
   line-height: 1.6;
   margin: 0 auto 40px;
   color: rgba(255, 255, 255, 0.75);
@@ -2218,14 +2218,14 @@ ul.clean li::before {
 
 /* Scenario Socle Card Styles */
 .scenario-socle-card ul.clean li {
-  font-size: 0.85rem !important;
+  font-size: 0.78rem !important;
   /* Slightly smaller text for 2-line consistency */
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
 }
 
 .scenario-socle-card h3 {
-  font-size: 1.1rem !important;
-  margin-bottom: 20px !important;
+  font-size: 1rem !important;
+  margin-bottom: 18px !important;
 }
 
 .scenario-socle-card strong.label-cyan {
@@ -2239,15 +2239,15 @@ ul.clean li::before {
 
 /* Impact Block (Slide 4) */
 .impact-block {
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.03);
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
   /* Subtle border */
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .impact-kpi-row {
@@ -2274,7 +2274,7 @@ ul.clean li::before {
 }
 
 .impact-kpi .kpi-value {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #fff;
   display: flex;
