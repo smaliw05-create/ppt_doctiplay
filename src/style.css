@@ -548,10 +548,10 @@ ul.clean li::before {
 }
 
 .hero-logo-icon {
-  height: 36px;
-  /* Reduced from 42px to fit 100% zoom */
-  margin-bottom: 6px;
-  /* Reduced from 8px */
+  height: 28px;
+  /* Reduced by 20% from 36px */
+  margin-bottom: 5px;
+  /* Reduced from 6px */
   display: flex;
   justify-content: center;
 }
@@ -563,8 +563,8 @@ ul.clean li::before {
 
 .hero-title {
   display: block;
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  /* Reduced from 3.8rem to fit better at 100% zoom */
+  font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+  /* Reduced by 20% from clamp(2rem, 4.5vw, 3.2rem) */
   color: #ffffff;
   font-weight: 900;
   line-height: 0.95;
@@ -602,8 +602,8 @@ ul.clean li::before {
 
 .hero-subtitle-caps {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.68rem;
-  /* Reduced from 0.75rem */
+  font-size: 0.55rem;
+  /* Reduced by 20% from 0.68rem */
   letter-spacing: 0.35em;
   color: var(--primary-cyan);
   opacity: 0.9;
@@ -618,8 +618,8 @@ ul.clean li::before {
   justify-content: center;
   gap: 10px;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6rem;
-  /* Reduced from 0.65rem */
+  font-size: 0.5rem;
+  /* Reduced by 20% from 0.6rem */
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 18px;
