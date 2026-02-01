@@ -2365,17 +2365,22 @@ ul.clean li::before {
   box-shadow: 0 8px 25px rgba(0, 242, 255, 0.4);
 }
 
-/* @media print for PDF export */
+/* @media print for Perfect A4 Landscape PDF export */
 @media print {
   @page {
     size: A4 landscape;
     margin: 0;
   }
 
+  html,
   body {
+    margin: 0 !important;
+    padding: 0 !important;
     background: #050a14 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
   /* Hide UI elements */
@@ -2391,34 +2396,85 @@ ul.clean li::before {
     overflow: visible !important;
     height: auto !important;
     display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
+  /* Fixed slide dimensions for A4 Landscape */
   section {
-    height: 100vh !important;
-    width: 100vw !important;
+    width: 297mm !important;
+    height: 210mm !important;
     page-break-after: always !important;
     page-break-inside: avoid !important;
     position: relative !important;
-    padding: 60px !important;
+    overflow: hidden !important;
     display: flex !important;
+    flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    overflow: hidden !important;
+    padding: 25mm !important;
+    /* Constant inner padding for all slides */
+    margin: 0 !important;
+    background: #050a14 !important;
   }
 
-  /* Force visibility for print */
+  /* Normalized Frame for all slides in print */
+  section::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 25mm !important;
+    /* Fixed frame position */
+    left: 15mm !important;
+    right: 15mm !important;
+    bottom: 15mm !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 20px !important;
+    z-index: 200 !important;
+    box-shadow: none !important;
+    display: block !important;
+  }
+
+  /* Slide 1 - Special override to keep it consistent with others in print */
+  #slide-1::after {
+    top: 25mm !important;
+  }
+
+  .inner {
+    width: 100% !important;
+    max-width: 260mm !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Force visibility and reset animations */
   .reveal {
     opacity: 1 !important;
     transform: none !important;
     visibility: visible !important;
+    animation: none !important;
+    transition: none !important;
   }
 
-  /* Adjust background gradient for print */
+  /* Remove all automatic transform/scaling */
+  * {
+    transform: none !important;
+  }
+
+  /* Keep visual elements visible */
+  .hero-product-wrap,
+  .hero-visual,
+  .tablet-frame {
+    display: block !important;
+    visibility: visible !important;
+    transform: none !important;
+    margin-top: 5mm !important;
+  }
+
   body::before {
     display: none !important;
-  }
-
-  .pitch-slide {
-    background: #050a14 !important;
   }
 }
