@@ -1240,7 +1240,7 @@
 
     <!-- SLIDE SCENARIOS: SCENARIOS SOCLE (Moved) -->
 
-    <!-- NEW SLIDE: MESURER L'IMPACT (Pilote IFSI) -->
+    <!-- SLIDE: MESURER L'IMPACT (Pilote IFSI) -->
     <section id="slide-impact" class="pitch-slide">
       <div class="inner">
         <div class="slide-header">
@@ -1249,34 +1249,133 @@
         </div>
 
         <div class="slide-content">
-
-          <!-- Protocol Row -->
-          <div class="reveal" style="margin-bottom: 30px; text-align: center;">
+          <!-- Protocol Row (Simplified) -->
+          <div class="reveal" style="margin-bottom: 40px; text-align: center;">
             <h3
-              style="font-size: 1.2rem; margin-bottom: 20px; color: var(--primary-cyan); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">
+              style="font-size: 1.1rem; margin-bottom: 25px; color: var(--primary-cyan); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">
               PROTOCOLE EN 3 TEMPS</h3>
             <div
-              style="display: flex; justify-content: center; gap: 30px; font-family: 'IBM Plex Mono'; font-size: 0.9rem; align-items:center;">
-              <div style="background:rgba(255,255,255,0.05); padding:10px 20px; border-radius:8px; width: 180px;">1.
-                Évaluation initiale (Avant)
-                <br><span style="opacity:0.6; font-size:0.8em">(10 min)</span>
+              style="display: flex; justify-content: center; gap: 40px; font-family: 'IBM Plex Mono'; font-size: 0.9rem; align-items:center;">
+              <div style="background:rgba(255,255,255,0.05); padding:15px 25px; border-radius:12px; width: 220px;">
+                <span style="color:var(--primary-cyan); font-weight:bold;">01.</span> ÉVAL INITIALE
+                <br><span style="opacity:0.6; font-size:0.75em">(Baseline 10 min)</span>
               </div>
-              <div style="color:var(--primary-cyan); font-size:1.5em;">→</div>
-              <div style="background:rgba(255,255,255,0.05); padding:10px 20px; border-radius:8px;">2. Sessions de
-                simulation <br><span style="opacity:0.6; font-size:0.8em">(1 → plusieurs)</span></div>
-              <div style="color:var(--primary-cyan); font-size:1.5em;">→</div>
-              <div style="background:rgba(255,255,255,0.05); padding:10px 20px; border-radius:8px;">3. Post-test
-                <br><span style="opacity:0.6; font-size:0.8em">(10 min)</span>
+              <div style="color:var(--primary-cyan); font-size:1.5em; opacity:0.3;">→</div>
+              <div style="background:rgba(255,255,255,0.05); padding:15px 25px; border-radius:12px; width: 220px;">
+                <span style="color:var(--primary-cyan); font-weight:bold;">02.</span> SIMULATION
+                <br><span style="opacity:0.6; font-size:0.75em">(Acquisition proactive)</span>
               </div>
-            </div>
-            <div style="margin-top: 10px; font-size: 0.75rem; color: rgba(255,255,255,0.5); font-style: italic;">
-              (même format questionnaire → comparaison avant/après)
+              <div style="color:var(--primary-cyan); font-size:1.5em; opacity:0.3;">→</div>
+              <div style="background:rgba(255,255,255,0.05); padding:15px 25px; border-radius:12px; width: 220px;">
+                <span style="color:var(--primary-cyan); font-weight:bold;">03.</span> POST-TEST
+                <br><span style="opacity:0.6; font-size:0.75em">(Validation finale)</span>
+              </div>
             </div>
           </div>
 
+          <!-- KPIs DU PILOTE (2x2 Grid) -->
+          <div class="reveal"
+            style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 40px; margin-top: 20px;">
+            <h3
+              style="font-size: 0.8rem; color: var(--primary-cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 30px; text-align: center; opacity: 0.8;">
+              Indicateurs clés du pilote
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+              <!-- KPI 1: Score -->
+              <div class="card feature-card" style="margin: 0; padding: 25px; background: rgba(255,255,255,0.03);">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                  <h4 style="margin: 0; font-size: 0.95rem; color: #fff;">Score de décision</h4>
+                  <span style="font-size:1.2rem;">🏆</span>
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.7; line-height: 1.4; margin-bottom: 15px;">Raisonnement
+                  clinique et pertinence des choix.</div>
+                <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono';">
+                  <span style="font-size: 0.75rem; opacity: 0.5;">42/100</span>
+                  <span style="color: var(--primary-cyan); font-weight: bold;">→</span>
+                  <span style="font-size: 0.9rem; color: #4ade80; font-weight: bold;">78/100</span>
+                </div>
+              </div>
+
+              <!-- KPI 2: Erreurs -->
+              <div class="card feature-card" style="margin: 0; padding: 25px; background: rgba(255,255,255,0.03);">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                  <h4 style="margin: 0; font-size: 0.95rem; color: #fff;">Erreurs critiques</h4>
+                  <span style="font-size:1.2rem;">⚠️</span>
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.7; line-height: 1.4; margin-bottom: 15px;">Fautes de dosage ou
+                  oublis de sécurité majeure.</div>
+                <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono';">
+                  <span style="font-size: 0.75rem; opacity: 0.5;">2.4 / h</span>
+                  <span style="color: var(--primary-cyan); font-weight: bold;">→</span>
+                  <span style="font-size: 0.9rem; color: #ff4444; font-weight: bold;">0.3 / h</span>
+                </div>
+              </div>
+
+              <!-- KPI 3: Temps -->
+              <div class="card feature-card" style="margin: 0; padding: 25px; background: rgba(255,255,255,0.03);">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                  <h4 style="margin: 0; font-size: 0.95rem; color: #fff;">Temps de réaction</h4>
+                  <span style="font-size:1.2rem;">⏱️</span>
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.7; line-height: 1.4; margin-bottom: 15px;">Délai avant
+                  l'action corrective prioritaire.</div>
+                <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono';">
+                  <span style="font-size: 0.75rem; opacity: 0.5;">185s</span>
+                  <span style="color: var(--primary-cyan); font-weight: bold;">→</span>
+                  <span style="font-size: 0.9rem; color: #bf95f9; font-weight: bold;">62s</span>
+                </div>
+              </div>
+
+              <!-- KPI 4: Usage -->
+              <div class="card feature-card" style="margin: 0; padding: 25px; background: rgba(255,255,255,0.03);">
+                <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                  <h4 style="margin: 0; font-size: 0.95rem; color: #fff;">Engagement / Replay</h4>
+                  <span style="font-size:1.2rem;">🔄</span>
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.7; line-height: 1.4; margin-bottom: 15px;">Taux de complétion
+                  et répétition volontaire.</div>
+                <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono';">
+                  <span style="font-size: 0.75rem; opacity: 0.5;">0.8 essay</span>
+                  <span style="color: var(--primary-cyan); font-weight: bold;">→</span>
+                  <span style="font-size: 0.9rem; color: #4ade80; font-weight: bold;">3.2 essay</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Line -->
+            <div
+              style="margin-top: 40px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: center; align-items: center; gap: 15px; font-family: 'IBM Plex Mono'; font-size: 0.8rem; color: var(--primary-cyan);">
+              <span style="opacity:0.4;">●</span>
+              <span style="letter-spacing: 0.1em; font-weight: bold;">BILAN AUTOMATIQUE + DÉCISION GO/NO-GO</span>
+              <span style="opacity:0.4;">●</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#slide-trace" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- SLIDE: SUIVI & TRAÇABILITÉ -->
+    <section id="slide-trace" class="pitch-slide">
+      <div class="inner">
+        <div class="slide-header">
+          <h2 class="reveal ultra-title">Suivi & traçabilité</h2>
+          <p class="subtitle reveal single-line">Pilotage de promo • Exports PDF individuels</p>
+        </div>
+
+        <div class="slide-content">
           <!-- Dashboard Mockup Visual (Pedagogical View) -->
           <div class="reveal feature-card"
-            style="margin-top: 20px; width: 100%; height: auto; min-height: 380px; padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #0b1121;">
+            style="margin-top: 10px; width: 100%; height: auto; padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); background: #0b1121;">
 
             <!-- Top Section: Filters & Table -->
             <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
@@ -1402,11 +1501,13 @@
             </div>
 
           </div>
-        </div> <!-- slide-content -->
+        </div>
       </div>
-      <a href="#slide-zero-friction" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+      <a href="#slide-zero-friction" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" />
-        </svg></a>
+        </svg>
+      </a>
     </section>
 
 
