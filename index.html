@@ -39,9 +39,7 @@
     </nav>
 
     <div class="top-actions">
-      <a class="btn btn-ghost"
-        href="mailto:contact@doctiplay.com?subject=Demande%20de%20d%C3%A9mo%20Doctiplay%20IFSI&body=Bonjour%2C%0A%0AJe%20souhaite%20planifier%20une%20d%C3%A9mo%20Doctiplay%20pour%20notre%20IFSI."
-        aria-label="Demander une démo">Demander une démo</a>
+      <a href="https://doctiplay.com" target="_blank" class="btn-top">Tester le simulateur</a>
     </div>
   </div>
 
@@ -52,7 +50,7 @@
   <div class="snap-container" id="main">
 
     <!-- SLIDE 1: COVER -->
-    <section id="slide-1" class="pitch-slide">
+    <section id="slide-1" class="pitch-slide cover-slide">
       <div class="deck-top">
         <div class="deck-badge-left">PROJET PILOTE IFSI</div>
       </div>
@@ -68,35 +66,42 @@
               <path d="M70 20h10l3-10l5 20l4-15l3 5h15" stroke="#00f2ff" stroke-width="2.5" stroke-linecap="round" />
             </svg>
           </div>
-          <h1 class="hero-title">DOCTI<span>PLAY</span><br><small
-              style="font-size: 0.35em; font-weight: 400; opacity: 0.8; letter-spacing: 2px;">PILOTE IFSI</small></h1>
+          <h1 class="hero-title">DOCTI<span>PLAY</span></h1>
+          <div class="hero-subtitle-caps reveal">PILOTE IFSI</div>
         </div>
 
-        <p class="subtitle reveal centered-subtitle" style="margin-bottom: 8px;">
+        <p class="subtitle reveal centered-subtitle" style="margin-bottom: 20px;">
           Micro-simulations cliniques immersives pour entraîner la décision en situation d’urgence
         </p>
-        <div class="reveal"
-          style="font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--primary-cyan); letter-spacing: 2px; margin-bottom: 24px; text-transform: uppercase; font-weight: 600;">
-          Rejouable • Mesurable • Facile à intégrer
+
+        <div class="reveal ui-tagline">
+          <span>REJOUABLE</span>
+          <span class="dot">•</span>
+          <span>MESURABLE</span>
+          <span class="dot">•</span>
+          <span>FACILE À INTÉGRER</span>
         </div>
 
-        <div class="hero-visual reveal">
-          <img src="public/hero-tablet.png" alt="Doctiplay Tablet Interface" class="floating-tablet">
-        </div>
-
-        <div class="btn-group reveal" style="margin-top: 20px;">
-          <a href="#slide-2" class="btn btn-primary">Découvrir le projet</a>
-          <a href="mailto:contact@doctiplay.com" class="btn btn-outline">Réserver une démo</a>
+        <div class="hero-product-wrap reveal">
+          <div class="tablet-glow"></div>
+          <div class="hero-visual">
+            <div class="tablet-frame">
+              <div class="tablet-camera"></div>
+              <img src="public/doctiplay_screen_actual.png" alt="Doctiplay Game Interface" class="hero-tablet-img">
+            </div>
+          </div>
+          <div class="tablet-reflection"></div>
         </div>
       </div>
+
       <a href="#slide-2" class="scroll-arrow reveal" aria-label="Slide suivante">
         <svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </a>
-      <div class="deck-footer-note reveal"
-        style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); opacity: 0.5; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;">
-        Démo + pilote pédagogique
+
+      <div class="deck-footer-note reveal" style="bottom: 40px; opacity: 0.4;">
+        MODE DASHBOARD ACTIVÉ • V1.2
       </div>
     </section>
 
@@ -104,46 +109,169 @@
     <!-- SLIDE 2: THE CHALLENGE -->
     <section id="slide-2" class="pitch-slide">
       <div class="inner">
-        <h2 class="reveal ultra-title">Le défi en IFSI</h2>
+        <h1 class="reveal ultra-title" style="text-align: center; margin-bottom: 20px;">Les défis de la simulation en
+          IFSI</h1>
         <p class="subtitle reveal single-line">Former à l’urgence avec des contraintes fortes.</p>
-        <div class="card-grid reveal deck-cards">
-          <div class="card col-6 horizontal-card">
-            <div class="tag-capsule">TERRAIN & PRATIQUE</div>
-            <ul class="deck-list">
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                <span>Exposition inégale aux situations critiques en stage</span>
-              </li>
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                <span>Peu de répétition sur les décisions à fort enjeu</span>
-              </li>
-            </ul>
+
+        <div class="reveal freins-pill-wrap">
+          <div class="freins-pill">
+            <span>4 freins récurrents :</span> exposition • répétition • charge • traçabilité
           </div>
-          <div class="card col-6 horizontal-card">
-            <div class="tag-capsule">LOGISTIQUE & SUIVI</div>
-            <ul class="deck-list">
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
+        </div>
+
+        <div class="card-grid reveal deck-cards">
+          <!-- Card 1: Terrain & pratique -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                <span>Charge formateur et logistique sous tension</span>
-              </li>
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
+              </div>
+              Terrain & pratique
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
-                <span>Évaluation difficile à comparer d’un groupe à l’autre</span>
-              </li>
-            </ul>
+                <span>exposition <span class="cyan-text">inégale</span> en stage</span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M23 4v6h-6"></path>
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+                <span><span class="cyan-text">peu</span> de répétition</span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                  </path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>décision sous <span class="cyan-text">stress</span> difficile</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Logistique & organisation -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              Logistique & organisation
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span><span class="cyan-text">charge</span> formateur</span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span>capacité simu <span class="cyan-text">limitée</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2v10l4.5 4.5"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <span>préparation + débrief <span class="cyan-text">lourds</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Évaluation & traçabilité -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              Évaluation & traçabilité
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                </svg>
+                <span><span class="cyan-text">manque</span> de preuves</span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>feedback <span class="cyan-text">peu granulaire</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M17 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M9 21v-2a4 4 0 0 1 3-3.87"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>évaluation <span class="cyan-text">individuelle</span> complexe</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Pédagogie & progression -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              Pédagogie & progression
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>niveaux <span class="cyan-text">hétérogènes</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+                <span>manque de <span class="cyan-text">standardisation</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>expérience <span class="cyan-text">peu comparable</span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -157,42 +285,159 @@
       <div class="inner">
         <h2 class="reveal ultra-title">Objectif pédagogique</h2>
         <p class="subtitle reveal single-line">Un entraînement standardisé pour sécuriser les pratiques.</p>
-        <div class="card-grid reveal deck-cards">
-          <div class="card col-6 horizontal-card">
-            <ul class="deck-list">
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                <span>Raisonnement clinique et priorisation</span>
-              </li>
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-                <span>Sécurité, communication, coordination</span>
-              </li>
-            </ul>
+        <div class="reveal freins-pill-wrap">
+          <div class="freins-pill">
+            <span>URGENCE</span> Ce que l’apprenant doit automatiser en situation d’urgence
           </div>
-          <div class="card col-6 horizontal-card">
-            <ul class="deck-list">
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
+        </div>
+
+        <div class="card-grid reveal deck-cards">
+          <!-- Card 1: Raisonnement & priorisation -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                 </svg>
-                <span>Réflexes en situation d’urgence</span>
-              </li>
-              <li>
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
+              </div>
+              Raisonnement & priorisation
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
-                <span>Débrief structuré et progression visible</span>
-              </li>
-            </ul>
+                <span>Identifier <span class="cyan-text">risques</span> / red flags</span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span>Hiérarchiser <span class="cyan-text">ABCDE</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Décision <span class="cyan-text">rapide</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Sécurité & surveillance -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              Sécurité & surveillance
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
+                </svg>
+                <span>Monitoring + <span class="cyan-text">réévaluation</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Sécurisation <span class="cyan-text">environnement</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Alerte <span class="cyan-text">précoce</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Communication & coordination -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              Communication & coordination
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M12 2v6m0 0a2 2 0 0 1-2 2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-4a2 2 0 0 1-2-2m0 0V2">
+                  </path>
+                </svg>
+                <span>SBAR / Transmissions <span class="cyan-text">ciblées</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>Répartition des <span class="cyan-text">rôles</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Boucle de <span class="cyan-text">communication</span> fermée</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Réflexes & procédures -->
+          <div class="card col-6 square-card">
+            <h3>
+              <div class="card-icon-inline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              Réflexes & procédures
+            </h3>
+            <div class="alert-rows">
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Protocoles + <span class="cyan-text">checklists</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                  </path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>Administration <span class="cyan-text">thérapeutique</span></span>
+              </div>
+              <div class="alert-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <span>Gestes <span class="cyan-text">standardisés</span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -206,24 +451,68 @@
       <div class="inner">
         <h2 class="reveal ultra-title">Doctiplay, c’est quoi ?</h2>
         <p class="subtitle reveal single-line" style="max-width: 900px; margin-left: auto; margin-right: auto;">
-          Des scénarios cliniques immersifs rejouables pour entraîner la décision en urgence, avec feedback et débrief
-          guidé.
-        </p>
-        <div class="card-grid reveal deck-cards">
-          <div class="card col-4">
-            <div class="tag-capsule">ACCESSIBILITÉ</div>
-            <h3>Inclusion facile</h3>
-            <p>Sessions courtes, réalistes, faciles à intégrer dans le planning.</p>
+          Des micro-simulations cliniques rejouables pour entraîner la décision en urgence, avec débrief guidé et suivi
+          pédagogique.
+          <!-- Added Pill -->
+        <div class="reveal ui-pill-caps-wrap">
+          <div class="ui-pill-caps">
+            REJOUABLE <span class="dot">•</span> GUIDÉ <span class="dot">•</span> MESURABLE
           </div>
-          <div class="card col-4">
-            <div class="tag-capsule">PRATIQUE</div>
-            <h3>Rejouabilité</h3>
-            <p>Rejouable à l'infini pour consolider les réflexes et automatismes.</p>
+        </div>
+
+        <div class="card-grid reveal deck-cards feature-grid">
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <path d="M9 3v18"></path>
+                  <path d="M15 9h-6"></path>
+                </svg>
+              </div>
+              <div class="tag-capsule">ACCESSIBILITÉ</div>
+            </div>
+            <h3>Intégration facile</h3>
+            <ul class="clean">
+              <li>Sessions courtes (10–20 min)</li>
+              <li>100% web, rien à installer</li>
+              <li>Salle info ou BYOD</li>
+            </ul>
           </div>
-          <div class="card col-4">
-            <div class="tag-capsule">DONNÉES</div>
-            <h3>Suivi simple</h3>
-            <p>Indicateurs pédagogiques simples par promo et par étudiant.</p>
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+                  <path d="M21 3v5h-5"></path>
+                </svg>
+              </div>
+              <div class="tag-capsule">PÉDAGOGIE</div>
+            </div>
+            <h3>Répétition & automatismes</h3>
+            <ul class="clean">
+              <li>Jusqu’à maîtrise complète</li>
+              <li>Décisions critiques sous stress</li>
+              <li>Débrief structuré & guidé</li>
+            </ul>
+          </div>
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20V10"></path>
+                  <path d="M18 20V4"></path>
+                  <path d="M6 20v-4"></path>
+                </svg>
+              </div>
+              <div class="tag-capsule">MESURE</div>
+            </div>
+            <h3>Suivi pédagogique simple</h3>
+            <ul class="clean">
+              <li>Indicateurs clairs par étudiant</li>
+              <li>Erreurs critiques identifiées</li>
+              <li>Progression vision avant/après</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -237,23 +526,164 @@
       <div class="inner">
         <h2 class="reveal ultra-title">Comment ça se passe ?</h2>
         <p class="subtitle reveal single-line">Un parcours fluide de la prise en main au débriefing.</p>
-        <div class="flow-container reveal" style="margin-top: 40px; margin-bottom: 60px;">
-          <svg viewBox="0 0 1000 160" fill="none">
-            <path d="M100 80H900" stroke="#00f2ff" stroke-width="2" stroke-dasharray="8 8" opacity="0.4" />
-            <g font-family="Inter" font-size="14" fill="white">
-              <circle cx="100" cy="80" r="12" fill="#00f2ff" />
-              <text x="100" y="130" text-anchor="middle" font-weight="600">Brief (objectif)</text>
+        <div class="timeline-ui reveal">
+          <div class="timeline-line"></div>
 
-              <circle cx="366" cy="80" r="12" fill="#00f2ff" />
-              <text x="366" y="130" text-anchor="middle" font-weight="600">Scénario (décisions)</text>
+          <!-- Step 1: Brief -->
+          <div class="step-item">
+            <div class="step-media glass-glow-card">
+              <div class="mini-ui-header">
+                <strong>MISSION</strong>
+              </div>
+              <div class="mini-card-body">
+                <div class="id-card-content">
+                  <div class="mini-ui-header" style="margin-bottom: 2px; font-size: 0.35rem;">IDENTITÉ</div>
+                  <div class="id-name" style="font-size:0.7rem;">Youssef E.</div>
+                  <div class="id-details">28 A / H</div>
+                  <div class="id-icon-bg">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.5">
+                      <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"
+                        opacity="0.5" />
+                      <path d="M12 18v-6" />
+                      <circle cx="12" cy="8" r="1" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step-marker">
+              <div class="marker-dot">1</div>
+            </div>
+            <div class="step-text">
+              <h4>Brief</h4>
+              <span>Objectif & contexte</span>
+            </div>
+          </div>
 
-              <circle cx="633" cy="80" r="12" fill="#00f2ff" />
-              <text x="633" y="130" text-anchor="middle" font-weight="600">Feedback (points clés)</text>
+          <!-- Step 2: Simulation -->
+          <div class="step-item">
+            <div class="step-media glass-glow-card">
+              <div class="mini-ui-header">
+                <div class="live-badge"><span class="dot"></span> LIVE</div>
+                <div class="chrono">14:58</div>
+              </div>
+              <div class="mini-card-body" style="padding: 4px; background: transparent; border: none;">
+                <div class="sim-dashboard">
+                  <div class="sim-metric">
+                    <small>FC</small>
+                    <strong>118</strong>
+                  </div>
+                  <div class="sim-metric">
+                    <small>SpO2</small>
+                    <strong>98%</strong>
+                  </div>
+                  <div class="sim-metric">
+                    <small>PA</small>
+                    <strong>93/58</strong>
+                  </div>
+                  <div class="sim-metric">
+                    <small>FR</small>
+                    <strong>29</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step-marker">
+              <div class="marker-dot">2</div>
+            </div>
+            <div class="step-text">
+              <h4>Simulation</h4>
+              <span>Décisions live</span>
+            </div>
+          </div>
 
-              <circle cx="900" cy="80" r="12" fill="#00f2ff" />
-              <text x="900" y="130" text-anchor="middle" font-weight="600">Débrief (guidé)</text>
-            </g>
-          </svg>
+          <!-- Step 3: Feedback -->
+          <div class="step-item">
+            <div class="step-media glass-glow-card">
+              <div class="mini-ui-header">
+                <strong>REPORT</strong>
+              </div>
+              <div class="mini-card-body"
+                style="border:none; background:transparent; padding:0; display:flex; flex-direction:column; gap:4px;">
+                <div class="feedback-stat-row" style="margin:0; padding:4px;">
+                  <div class="stat-icon">✅</div>
+                  <div class="stat-val">8/10</div>
+                </div>
+                <div class="feedback-stat-row" style="margin:0; padding:4px;">
+                  <div class="stat-icon">⚠️</div>
+                  <div class="stat-val">1</div>
+                </div>
+                <div class="next-step-tag" style="font-size: 0.35rem; align-self: center; margin-top: 4px;">Next >
+                </div>
+              </div>
+            </div>
+            <div class="step-marker">
+              <div class="marker-dot">3</div>
+            </div>
+            <div class="step-text">
+              <h4>Feedback</h4>
+              <span>Points clés</span>
+            </div>
+          </div>
+
+          <!-- Step 4: Débrief -->
+          <div class="step-item">
+            <div class="step-media glass-glow-card">
+              <div class="mini-ui-header">
+                <strong>GUIDE</strong>
+              </div>
+              <div class="mini-card-body"
+                style="background:transparent; border:none; padding:0; display:flex; flex-direction:column; justify-content:center; gap:3px;">
+                <div class="debrief-pill border-green" style="padding:4px; font-size:0.4rem;">
+                  <strong>+ POINTS FORTS</strong>
+                </div>
+                <div class="debrief-pill border-red" style="padding:4px; font-size:0.4rem;">
+                  <strong>! ERREURS</strong>
+                </div>
+                <div class="debrief-pill border-cyan" style="padding:4px; font-size:0.4rem;">
+                  <strong>⚡ PLAN</strong>
+                </div>
+              </div>
+            </div>
+            <div class="step-marker">
+              <div class="marker-dot">4</div>
+            </div>
+            <div class="step-text">
+              <h4>Débrief</h4>
+              <span>Analyse guidée</span>
+            </div>
+          </div>
+
+          <!-- Step 5: Suivi -->
+          <div class="step-item">
+            <div class="step-media glass-glow-card">
+              <div class="mini-ui-header">
+                <strong>SUIVI</strong>
+              </div>
+              <div class="mini-card-body"
+                style="background:transparent; border:none; padding:0; display:flex; flex-direction:column; justify-content:center;">
+                <div class="btn-export-mini">
+                  <span>📥</span> PDF
+                </div>
+                <div class="prog-widget-row">
+                  <div class="prog-label">Progression</div>
+                  <div class="prog-val">+15%</div>
+                </div>
+                <div class="prog-bar-mini">
+                  <div class="prog-fill-mini" style="width: 75%;"></div>
+                </div>
+                <div class="id-meta" style="text-align:center; margin-top:2px;">PROMO 2024</div>
+              </div>
+            </div>
+            <div class="step-marker">
+              <div class="marker-dot">5</div>
+            </div>
+            <div class="step-text">
+              <h4>Suivi</h4>
+              <span>Progression</span>
+            </div>
+          </div>
         </div>
       </div>
       <a href="#slide-6" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
@@ -265,25 +695,161 @@
     <section id="slide-6" class="pitch-slide">
       <div class="inner">
         <h2 class="reveal ultra-title">Où ça s’intègre dans le parcours IFSI</h2>
-        <p class="subtitle reveal single-line">Compatible avec l’organisation pédagogique existante.</p>
-        <div class="card-grid reveal deck-cards">
-          <div class="card col-4">
+        <p class="subtitle reveal single-line">S’intègre dans le planning existant : avant, pendant, après le stage.</p>
+        <div class="ui-pill-caps-wrap reveal" style="margin-top: 30px;">
+          <div class="ui-pill-caps">Micro-simulations • Rejouables • Mesurables</div>
+        </div>
+        <div class="card-grid reveal deck-cards feature-grid">
+          <!-- Card 1: Avant Stage -->
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+              </div>
+              <div class="tag-capsule">PRÉPARATION</div>
+            </div>
             <h3>Avant stage</h3>
-            <p>Préparation aux situations à risque et sécurisation des bases.</p>
+            <ul class="clean" style="margin-top: 10px;">
+              <li><strong style="color:var(--primary-cyan); white-space:nowrap;">Objectif&nbsp;:</strong><br> Sécuriser
+                bases avant exposition réelle</li>
+              <li><strong style="color:var(--primary-cyan); white-space:nowrap;">Format&nbsp;:</strong><br>
+                Micro-simulations + checklist réflexes</li>
+            </ul>
           </div>
-          <div class="card col-4">
-            <h3>Après stage</h3>
-            <p>Consolidation des acquis et remédiation ciblée.</p>
-          </div>
-          <div class="card col-4">
+
+          <!-- Card 2: En Td -->
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="tag-capsule">ENTRAÎNEMENT</div>
+            </div>
             <h3>En TD</h3>
-            <p>Entraînement en petit groupe + débrief de promo.</p>
+            <ul class="clean" style="margin-top: 10px;">
+              <li><strong style="color:var(--primary-cyan); white-space:nowrap;">Objectif&nbsp;:</strong><br>
+                Entraînement groupe + coordination</li>
+              <li><strong style="color:var(--primary-cyan); white-space:nowrap;">Format&nbsp;:</strong><br> Session +
+                débrief guidé formateur</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Après Stage -->
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="tag-capsule">CONSOLIDATION</div>
+            </div>
+            <h3>Après stage</h3>
+            <ul class="clean" style="margin-top: 10px;">
+              <li><strong style="color:var(--primary-cyan); white-space:nowrap;">Objectif&nbsp;:</strong><br>
+                Remédiation ciblée / erreurs fréquentes</li>
+              <li><strong style="color:var(--primary-cyan); white-space:nowrap;">Format&nbsp;:</strong><br> Rejouer +
+                suivi progression</li>
+            </ul>
+            progression</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="trust-badges-row reveal">
+          <div class="trust-badge">⚡ Zéro logistique</div>
+          <div class="trust-badge">🌐 100% web</div>
+          <div class="trust-badge">💿 Aucune installation</div>
+          <div class="trust-badge">🔒 Données fictives / RGPD</div>
+          <div class="trust-badge">📊 Export PDF + Suivi</div>
+        </div>
+      </div>
+      <a href="#slide-implementation" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg></a>
+    </section>
+
+    <!-- SLIDE 6b: IMPLEMENTATION -->
+    <section id="slide-implementation" class="pitch-slide">
+      <div class="inner">
+        <h2 class="reveal ultra-title">Lancer un pilote IFSI, simplement</h2>
+        <p class="subtitle reveal single-line">3 étapes, sans bouleverser l’organisation pédagogique.</p>
+        <div class="ui-pill-caps-wrap reveal" style="margin-top: 20px;">
+          <div class="ui-pill-caps">4–6 semaines • 3 scénarios • 1h / session • promo ou sous-groupe</div>
+        </div>
+
+        <div class="card-grid reveal deck-cards feature-grid">
+          <!-- Step 1 -->
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="tag-capsule">ÉTAPE 1</div>
+            </div>
+            <h3>Cadrage rapide</h3>
+            <ul class="clean">
+              <li>Objectifs & Groupes cibles</li>
+              <li>Choix scénarios socles</li>
+              <li>Modalités (TD / Stage)</li>
+            </ul>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+              <div class="tag-capsule">ÉTAPE 2</div>
+            </div>
+            <h3>Micro-simulations</h3>
+            <ul class="clean">
+              <li>Sessions courtes rejouables</li>
+              <li>Autonomie étudiant</li>
+              <li>Débrief guidé inclus</li>
+            </ul>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="card col-4 feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="tag-capsule">ÉTAPE 3</div>
+            </div>
+            <h3>Restitution</h3>
+            <ul class="clean">
+              <li>Synthèse progression</li>
+              <li>Vision promo / étudiant</li>
+              <li>Export PDF validant</li>
+            </ul>
           </div>
         </div>
       </div>
-      <a href="#slide-7" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+      <a href="#slide-7" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" />
-        </svg></a>
+        </svg>
+      </a>
     </section>
 
     <!-- SLIDE 7: SCENARIOS SOCLE -->
