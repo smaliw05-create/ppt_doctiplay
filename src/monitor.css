@@ -1,12 +1,12 @@
 /* --- LIVE MONITOR COMPONENT --- */
 
-#live-monitor {
+.live-monitor {
     position: absolute;
-    /* Corrected fit: Aligned with Technical Log left edge, covering the old curve */
+    /* Aligned with Technical Log left edge, covering the old curve */
     top: 13.3%;
     left: 9%;
     width: 44.5%;
-    height: 35%;
+    height: 35.5%;
     background: #000;
     border-radius: 4px;
     overflow: hidden;
