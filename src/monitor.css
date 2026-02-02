@@ -247,32 +247,33 @@ canvas {
 /* Game Timer Overlay (Top Right of Tablet) */
 .game-timer-overlay {
     position: absolute;
-    top: 3.5%;
-    right: 18%;
-    /* Positioned over the 10:45 in the image */
+    top: 10.3%;
+    /* Perfectly aligned with the 10:45 text */
+    right: 10.4%;
+    /* Perfectly aligned with the 10:45 text */
     display: flex;
     align-items: center;
-    background: rgba(10, 15, 25, 0.95);
-    padding: 3px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 242, 255, 0.2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #0D1117;
+    /* Matches the header bar background to erase old text */
+    padding: 1px 4px;
+    border-radius: 4px;
     z-index: 25;
     color: #0ff;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.55rem;
     font-weight: 600;
 }
 
 .game-timer-overlay .timer-icon {
-    width: 12px;
-    height: 12px;
-    margin-right: 6px;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
     stroke: #0ff;
 }
 
 .game-timer-overlay .timer-countdown {
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+    line-height: 1;
 }
 
 /* Print Handling */
