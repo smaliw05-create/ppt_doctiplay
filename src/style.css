@@ -3344,6 +3344,46 @@ ul.clean li::before {
     padding: 0 10px !important;
   }
 
+  /* Slide 5 - Debrief */
+  #slide-5 .ultra-title {
+    font-size: 1.25rem !important;
+  }
+
+  /* Slide 6 - Trace */
+  .students-table {
+    display: block !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+  }
+
+  /* Slide 7 - Scenarios & Frise */
+  .design-frise {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+  }
+
+  .frise-step {
+    flex: 0 0 calc(50% - 10px) !important;
+    text-align: center !important;
+  }
+
+  /* Slide 13 - Timeline */
+  .timeline-steps-wrap {
+    flex-direction: column !important;
+    gap: 40px !important;
+    margin-top: 40px !important;
+  }
+
+  .timeline-steps-wrap>div {
+    width: 100% !important;
+  }
+
+  /* Hide connection line on mobile */
+  #slide-next-step [style*="position: absolute; top: 15px"] {
+    display: none !important;
+  }
+
   /* Layout Grids */
   .card-grid,
   .feature-grid,
@@ -3371,6 +3411,17 @@ ul.clean li::before {
 
   #slide-moteur .callout-arrow-svg {
     display: none !important;
+  }
+
+  #slide-moteur .current-view-container {
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  #slide-moteur .tablet-frame {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 20px auto !important;
   }
 
   /* Student Table / Trace */
