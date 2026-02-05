@@ -3410,132 +3410,113 @@ ul.clean li::before {
     width: 100% !important;
   }
 
-  /* Compact Student Cards (Vignettes) */
+  /* Compact Student Cards (Vignettes) - ALIGNED LAYOUT */
+  /* Shared Grid for Header and Rows */
+  #slide-trace .dashboard-row,
+  .students-header-row {
+    display: grid !important;
+    grid-template-columns: 1.4fr 0.6fr 0.6fr 0.8fr 0.7fr !important;
+    gap: 4px !important;
+    align-items: center !important;
+    padding: 8px 6px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Reset flex/grid areas from previous edits */
+  #slide-trace .dashboard-row>div,
+  .students-header-row>div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    grid-area: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* Header Specifics */
+  .students-header-row {
+    margin-bottom: 5px !important;
+    border: none !important;
+    font-size: 0.55rem !important;
+    background: transparent !important;
+  }
+
+  /* Data Row Specifics */
   #slide-trace .dashboard-row {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 10px !important;
-    gap: 8px !important;
     background: rgba(255, 255, 255, 0.02) !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
     border-radius: 6px !important;
-    font-size: 0.7rem !important;
-  }
-
-  #slide-trace .dashboard-row>div:first-child {
-    /* Avatar + Name */
-    width: 100% !important;
-    justify-content: space-between !important;
-    margin-bottom: 5px !important;
-  }
-
-  /* Scores container inside row to be horizontal */
-  #slide-trace .dashboard-row {
-    position: relative;
-  }
-
-  /* Select the scores divs (2nd, 3rd, 4th children) and put them in a row */
-  /* Since we can't easily group them without changing HTML, we will use grid for the row */
-
-  #slide-trace .dashboard-row {
-    display: grid !important;
-    grid-template-columns: 1fr auto !important;
-    /* Name | Last Access */
-    grid-template-rows: auto auto !important;
-    /* Top: Name/Access, Bottom: Scores */
-    gap: 10px !important;
-    align-items: center !important;
-  }
-
-  /* Name Section */
-  #slide-trace .dashboard-row>div:nth-child(1) {
-    grid-column: 1 / -1 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 10px !important;
-  }
-
-  /* Last Access (moved to top right via order or absolute if needed, but grid is easier) */
-  #slide-trace .dashboard-row>div:nth-child(5) {
-    grid-column: 2 / 3 !important;
-    grid-row: 1 / 2 !important;
-    justify-self: end !important;
-    position: absolute !important;
-    top: 10px !important;
-    right: 10px !important;
-  }
-
-  /* Hide the header names for scores on mobile if needed, or keep simpler */
-
-  /* The scores (2, 3, 4) */
-  #slide-trace .dashboard-row>div:nth-child(2),
-  #slide-trace .dashboard-row>div:nth-child(3),
-  #slide-trace .dashboard-row>div:nth-child(4) {
-    display: inline-flex !important;
-    justify-content: center !important;
-    background: rgba(0, 0, 0, 0.2) !important;
-    padding: 4px 8px !important;
-    border-radius: 4px !important;
     font-size: 0.65rem !important;
+    margin-bottom: 6px !important;
+    padding: 10px 6px !important;
   }
 
-  /* Wrapper for scores to aligned them? No wrapper in HTML. 
-     We can force them to float or inline-grid.
-     Actually, let's use a sub-grid hack or just display block.
-  */
-
-  #slide-trace .dashboard-row {
+  /* 1. Name Column */
+  #slide-trace .dashboard-row>div:nth-child(1) {
     display: flex !important;
-    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+    overflow: hidden !important;
+    justify-content: flex-start !important;
   }
 
-  #slide-trace .dashboard-row>div:nth-child(1) {
-    width: 100% !important;
-    margin-bottom: 4px !important;
+  #slide-trace .dashboard-row>div:nth-child(1) span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
-  /* Create a faux-row for scores using flex order or specific styling is hard without wrapper.
-     Let's try a grid layout that mimics the "Thomas B" insight card.
-  */
-
-  #slide-trace .dashboard-row {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr 1fr !important;
-    grid-template-areas:
-      "name name name date"
-      "score1 score2 score3 ." !important;
-    padding: 8px 12px !important;
+  /* Smaller Avatar */
+  #slide-trace .dashboard-row>div:nth-child(1)>div {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 0.5rem !important;
+    flex-shrink: 0 !important;
   }
 
-  #slide-trace .dashboard-row>div:nth-child(1) {
-    grid-area: name;
+  /* 2. DKA Column */
+  #slide-trace .dashboard-row>div:nth-child(2),
+  .students-header-row>div:nth-child(2) {
+    text-align: center !important;
   }
 
-  #slide-trace .dashboard-row>div:nth-child(5) {
-    grid-area: date;
-    text-align: right !important;
+  /* 3. PolyT Column */
+  #slide-trace .dashboard-row>div:nth-child(3),
+  .students-header-row>div:nth-child(3) {
+    text-align: center !important;
   }
 
-  #slide-trace .dashboard-row>div:nth-child(2) {
-    grid-area: score1;
-    text-align: left !important;
-  }
-
-  #slide-trace .dashboard-row>div:nth-child(3) {
-    grid-area: score2;
+  /* 4. Score Column */
+  #slide-trace .dashboard-row>div:nth-child(4),
+  .students-header-row>div:nth-child(4) {
     text-align: center !important;
   }
 
   #slide-trace .dashboard-row>div:nth-child(4) {
-    grid-area: score3;
+    font-weight: 800 !important;
+  }
+
+  /* 5. Date Column */
+  #slide-trace .dashboard-row>div:nth-child(5),
+  .students-header-row>div:nth-child(5) {
     text-align: right !important;
   }
 
-  /* Adjust font sizes */
-  #slide-trace .dashboard-row span {
-    font-size: 0.8rem !important;
+  #slide-trace .dashboard-row>div:nth-child(5) {
+    font-size: 0.55rem !important;
+    opacity: 0.6 !important;
   }
+
+  /* Header Alignments */
+  .students-header-row>div:nth-child(1) {
+    text-align: left !important;
+    padding-left: 2px !important;
+  }
+
+  /* Ensure fonts are small enough */
+  #slide-trace .dashboard-row span {
+    font-size: 0.7rem !important;
+  }
+
 
 
   /* Slide 7 - Scenarios & Frise */
@@ -3634,5 +3615,65 @@ ul.clean li::before {
 
   .logo-text {
     font-size: 0.9rem !important;
+  }
+}
+
+/* Slide 6 (Intégration) Mobile Optimization - Compact Cards */
+@media (max-width: 768px) {
+  #slide-6 .feature-card {
+    padding: 10px 12px !important;
+    min-height: auto !important;
+  }
+
+  #slide-6 .feature-header {
+    margin-bottom: 2px !important;
+    align-items: center !important;
+  }
+
+  #slide-6 .feature-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  #slide-6 .feature-icon {
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 8px !important;
+  }
+
+  #slide-6 .tag-capsule {
+    font-size: 0.45rem !important;
+    padding: 2px 6px !important;
+    line-height: 1 !important;
+    height: auto !important;
+  }
+
+  #slide-6 .feature-card h3 {
+    font-size: 0.85rem !important;
+    margin: 4px 0 !important;
+  }
+
+  #slide-6 .feature-card ul {
+    margin-top: 2px !important;
+  }
+
+  #slide-6 .feature-card ul li {
+    font-size: 0.7rem !important;
+    margin-bottom: 2px !important;
+    line-height: 1.2 !important;
+    display: inline-block !important;
+    width: 100% !important;
+  }
+
+  /* Compact the specific list items by hiding BR */
+  #slide-6 .feature-card ul li br {
+    display: none !important;
+  }
+
+  #slide-6 .feature-card ul li strong {
+    display: inline-block !important;
+    margin-right: 4px !important;
+    /* Adds space after label */
+    color: var(--primary-cyan) !important;
   }
 }
