@@ -3240,318 +3240,166 @@ ul.clean li::before {
 /* ============================================================
    MOBILE RESPONSIVENESS (Smartphone compatibility)
    ============================================================ */
+
+/* 1. Global Mobile Adjustments (Tablets & Phones) */
+@media (max-width: 1024px) {
+  .safe {
+    padding: 80px 30px 40px !important;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
+    --header-h: 70px;
     --frame-side: 20px;
-    --header-h: 90px;
-    --maxw: 100%;
   }
 
-  /* Reset body/html for better touch experience */
   html,
   body {
-    overflow: hidden !important;
-  }
-
-  /* Compact Topbar */
-  .topbar {
-    padding: 0 15px;
-    height: 70px;
-    grid-template-columns: auto 1fr;
-  }
-
-  .nav {
-    display: none !important;
-    /* Hide menu links on mobile */
-  }
-
-  .top-actions {
-    justify-self: end;
-  }
-
-  .btn-top span {
-    display: none;
-    /* Hide button text, keep icon */
-  }
-
-  .brand-logo {
-    height: 18px;
-  }
-
-  .logo-text {
-    font-size: 0.8rem;
-  }
-
-  /* Slide Scaling & Layout */
-  .safe {
-    padding-left: var(--frame-side) !important;
-    padding-right: var(--frame-side) !important;
-    padding-top: var(--header-h) !important;
-    padding-bottom: 20px !important;
-  }
-
-  .ultra-title {
-    font-size: 1.4rem !important;
-    line-height: 1.2 !important;
-  }
-
-  .subtitle {
-    font-size: 0.8rem !important;
-    white-space: normal !important;
-  }
-
-  /* Hero Slide Adjustments */
-  .slide-hero .inner {
-    transform: scale(0.9) translateY(-20px) !important;
-  }
-
-  .hero-title {
-    font-size: 2rem !important;
-  }
-
-  .hero-product-wrap {
-    max-width: 280px !important;
-  }
-
-  /* Hide the info badge on mobile or move it below */
-  .deck-badge-left {
-    display: none !important;
-  }
-
-  /* Grid Conversions */
-  .slide-content grid,
-  [style*="display: grid"],
-  [style*="display:grid"] {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-  }
-
-  /* Specific Grid Fixes */
-  #slide-scenarios [style*="grid-template-columns: repeat(3, 1fr)"],
-  #slide-test-vide [style*="grid-template-columns: repeat(5, 1fr)"],
-  #slide-test-vide [style*="grid-template-columns: repeat(4, 1fr)"],
-  #slide-implementation [style*="grid-template-columns: 1fr 1fr 1fr"],
-  [style*="grid-template-columns: 220px 1fr"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Dashboard / Complex layouts */
-  .roadmap-block {
-    grid-template-columns: 1fr !important;
-  }
-
-  .roadmap-arrow {
-    transform: rotate(90deg);
-    padding: 10px 0 !important;
-  }
-
-  /* UI Cards */
-  .card,
-  .feature-card {
-    min-height: auto !important;
-    padding: 15px !important;
-  }
-
-  .frise-step {
-    flex-direction: row !important;
-    text-align: left !important;
-    gap: 10px !important;
-  }
-
-  /* Allow internal scrolling in slide-content if really needed on mobile */
-  .slide-content {
+    overflow-x: hidden !important;
     overflow-y: auto !important;
-    max-height: calc(100vh - var(--header-h) - 40px);
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Progress bar thickness */
-  .progress-bar {
-    height: 3px;
-  }
-}
-
-/* ============================================================
-   MOBILE CLEANUP (Deep fixes for overlapping & scaling)
-   ============================================================ */
-@media (max-width: 580px) {
-  :root {
-    --header-h: 70px;
-    --frame-side: 15px;
-  }
-
-  /* Reset layout constraints */
-  .safe {
-    padding-top: var(--header-h) !important;
-    padding-bottom: 60px !important;
-    /* Space for scroll arrow */
-    justify-content: flex-start !important;
-    overflow-y: auto !important;
-  }
-
-  /* Fix the transform scale on hero and other slides */
-  .inner.center {
-    transform: none !important;
-    width: 100% !important;
-    padding: 10px !important;
-  }
-
-  .ultra-title {
-    font-size: 1.15rem !important;
-    margin-bottom: 8px !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  .subtitle {
-    font-size: 0.75rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 15px !important;
-    text-align: center !important;
-    white-space: normal !important;
-  }
-
-  /* FORCE ALL GRIDS TO 1 COLUMN */
-  .card-grid,
-  .scenarios-grid,
-  .protocol-steps,
-  .kpi-grid,
-  .deck-cards,
-  [style*="display: grid"],
-  [style*="display:grid"] {
-    grid-template-columns: 1fr !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    width: 100% !important;
-  }
-
-  /* Cards fixes */
-  .card,
-  .feature-card,
-  .kpi-card,
-  .scenario-card,
-  .step-card,
-  .square-card {
-    width: 100% !important;
-    min-height: auto !important;
-    padding: 16px !important;
     height: auto !important;
-    margin: 0 !important;
   }
 
-  .card h3,
-  .feature-card h3 {
-    font-size: 0.9rem !important;
-    margin-bottom: 8px !important;
+  /* Disable Snap on Mobile to allow natural scrolling of long content */
+  .snap-container {
+    scroll-snap-type: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
   }
-
-  /* Fix Slide Moteur (Engine) - Complex overlaps */
-  #slide-moteur .current-view-container {
-    padding: 0 !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  #slide-moteur .engine-callout {
-    position: static !important;
-    margin: 10px 0 !important;
-    width: 100% !important;
-    border-left: 2px solid var(--primary-cyan) !important;
-    padding-left: 12px !important;
-    background: rgba(255, 255, 255, 0.03) !important;
-    border-radius: 4px !important;
-  }
-
-  #slide-moteur .callout-arrow-svg {
-    display: none !important;
-    /* Hide confusing arrows on mobile */
-  }
-
-  #slide-moteur .tablet-frame {
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 20px auto !important;
-  }
-
-  /* Specific elements scaling */
-  .freins-pill-wrap {
-    margin-bottom: 20px !important;
-  }
-
-  .freins-pill {
-    font-size: 0.65rem !important;
-    padding: 8px 12px !important;
-    line-height: 1.4 !important;
-  }
-
-  /* Timeline Slide fixes */
-  .timeline-container,
-  .roadmap-block {
-    flex-direction: column !important;
-    gap: 30px !important;
-    padding-left: 20px !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .timeline-item,
-  .roadmap-step {
-    width: 100% !important;
-    text-align: left !important;
-  }
-
-  .timeline-line,
-  .roadmap-arrow {
-    display: none !important;
-  }
-
-  /* Monitoring / Dashboard fix */
-  .dashboard-main {
-    flex-direction: column !important;
-  }
-
-  /* Footer & Navigation */
-  .topbar {
-    height: 60px !important;
-  }
-
-  .scroll-arrow {
-    bottom: 15px !important;
-  }
-
-  /* Hide tablet and complex overlays on very small height screens */
-  @media (max-height: 500px) {
-    .hero-visual {
-      display: none !important;
-    }
-  }
-}
-
-/* Allow scrolling within slides on small mobiles if content exceeds viewport */
-@media (max-width: 580px) {
 
   section,
   .slide,
   .pitch-slide {
-    overflow-y: auto !important;
-    /* Enable scroll if content is too tall */
     height: auto !important;
     min-height: 100vh !important;
-    scroll-snap-align: start;
+    scroll-snap-align: none !important;
+    padding: 0 !important;
+    margin-bottom: 40px !important;
+    display: block !important;
   }
 
-  .snap-container {
-    scroll-snap-type: y proximity !important;
-    /* Less strict on mobile to allow internal scroll */
-  }
-
-  /* Prevent safe container from forcing 100% height when we want it to grow */
   .safe {
     height: auto !important;
     min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: var(--header-h) var(--frame-side) 60px !important;
+    border-radius: 0 !important;
+    /* Full width feel on mobile */
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .topbar {
+    padding: 0 15px;
+    height: 60px;
+    background: rgba(5, 10, 20, 0.95);
+  }
+
+  .nav {
+    display: none !important;
+    /* Hide navigation links */
+  }
+
+  .btn-top span {
+    display: none;
+    /* Hide button text on mobile */
+  }
+
+  .btn-top svg {
+    margin-right: 0 !important;
+  }
+
+  /* Typography */
+  .ultra-title {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .subtitle {
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    white-space: normal !important;
+    width: 100% !important;
+  }
+
+  /* Slide 1 - Hero Force Reset */
+  #slide-1 .inner {
+    transform: none !important;
+    padding: 20px 0 !important;
+    width: 100% !important;
+  }
+
+  #slide-1 p[style*="white-space: nowrap"] {
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
+  }
+
+  .hero-product-wrap {
+    max-width: 100% !important;
+    padding: 0 10px !important;
+  }
+
+  /* Layout Grids */
+  .card-grid,
+  .feature-grid,
+  .deck-cards,
+  [style*="display: grid"],
+  [style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .card,
+  .feature-card {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* Engine Slide (Moteur) */
+  #slide-moteur .engine-callout {
+    position: static !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+    transform: none !important;
+  }
+
+  #slide-moteur .callout-arrow-svg {
+    display: none !important;
+  }
+
+  /* Student Table / Trace */
+  .student-table {
     display: block !important;
-    /* Stack naturally */
+    overflow-x: auto !important;
+  }
+
+  /* Hide unnecessary elements */
+  .scroll-arrow {
+    display: none !important;
+  }
+}
+
+/* 2. Deep Clean for small smartphones */
+@media (max-width: 480px) {
+  .ultra-title {
+    font-size: 1.3rem !important;
+  }
+
+  .card {
+    padding: 15px !important;
+  }
+
+  .brand-logo {
+    width: 40px !important;
+  }
+
+  .logo-text {
+    font-size: 0.9rem !important;
   }
 }
