@@ -3821,3 +3821,37 @@ ul.clean li::before {
     gap: 20px !important;
   }
 }
+
+/* FINAL OVERRIDE FOR SLIDE IMPACT (MESURER L'IMPACT) MOBILE */
+@media (max-width: 768px) {
+
+  /* Protocol Section - Force Vertical */
+  #slide-impact [style*="display: flex; justify-content: center; gap: 40px"] {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  /* Protocol Cards */
+  #slide-impact [style*="width: 220px"] {
+    width: 100% !important;
+    padding: 15px !important;
+  }
+
+  /* Hide Horizontal Arrows (they are divs with font-size:1.5em) */
+  #slide-impact [style*="font-size:1.5em; opacity:0.3"] {
+    display: none !important;
+    /* Hide arrows on mobile */
+  }
+
+  /* KPIs Section - Single Column */
+  #slide-impact [style*="display: grid; grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Reduce header sizes */
+  #slide-impact h3 {
+    font-size: 1rem !important;
+    margin-bottom: 15px !important;
+  }
+}
