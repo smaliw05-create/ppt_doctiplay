@@ -14,6 +14,17 @@
   <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="src/monitor.css">
   <style>
+    .cohort-row {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .cohort-row:hover {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      transform: translateX(4px);
+    }
+
     @media (max-width: 768px) {
       .new-content-grid {
         display: flex !important;
@@ -26,6 +37,56 @@
         width: 100% !important;
         height: auto !important;
         display: block !important;
+      }
+
+      .cohort-row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        padding: 3px 8px !important;
+        gap: 0 !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        min-height: unset !important;
+        font-size: 12px !important;
+        background: rgba(255, 255, 255, 0.01) !important;
+      }
+
+      .cohort-row>div:nth-child(1) {
+        order: 1;
+        flex: 1;
+        margin-bottom: 0;
+      }
+
+      .cohort-row>div:nth-child(2) {
+        order: 2;
+        width: auto;
+        text-align: right;
+        padding-right: 0 !important;
+      }
+
+      .cohort-row>div:nth-child(2) div[style*="flex-direction: column"] {
+        gap: 0 !important;
+      }
+
+      .cohort-row>div:nth-child(3) {
+        order: 3;
+        width: 100% !important;
+        margin-top: -6px !important;
+        padding-left: 32px !important;
+        opacity: 0.5 !important;
+        font-size: 10px !important;
+      }
+
+      .cohort-row div[style*="width: 24px"],
+      .cohort-row div[style*="width: 28px"] {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.65rem !important;
+      }
+
+      .cohort-list {
+        gap: 3px !important;
+        margin-top: 8px !important;
       }
     }
   </style>
@@ -855,248 +916,18 @@
           </div>
         </div>
       </div>
-      <a href="#slide-trace" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+      <a href="#slide-trace-2" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
           <path d="M7 10l5 5 5-5" />
         </svg></a>
     </section>
 
-    <!-- SLIDE: SUIVI & TRAÇABILITÉ (Moved after Debrief) -->
-    <section id="slide-trace" class="slide pitch-slide">
-      <div class="safe">
-        <div class="slide-header">
-          <h2 class="reveal ultra-title">Suivi & traçabilité</h2>
-          <p class="subtitle reveal single-line">Pilotage de promo • Exports PDF individuels</p>
-        </div>
 
-        <div class="slide-content"
-          style="display: flex; justify-content: center; align-items: center; flex: 1; padding: 20px 0;">
-          <!-- New Layout: Vertical Timeline + Dashboard (Suivi & Traçabilité, Slide 4) -->
-          <div style="display: grid; grid-template-columns: 220px 1fr; gap: 50px; align-items: stretch; height: 100%;">
-
-            <!-- LEFT COL: Timeline (Matched to Slide 5 Debrief) -->
-            <div class="left-timeline-col"
-              style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
-              <div class="vertical-timeline"
-                style="display: flex; flex-direction: column; gap: 32px; position: relative; padding: 0; width: 100%; align-items: flex-start;">
-                <!-- Vertical Line -->
-                <div
-                  style="position: absolute; left: 20px; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.25); transform: translateX(-50%);">
-                </div>
-
-                <!-- Step 1: BRIEF -->
-                <div class="v-step"
-                  style="opacity:0.4; display:flex; gap:16px; align-items:center; padding-left: 16px;">
-                  <div style="width:8px; height:8px; background:#556; border-radius:50%; border:1px solid #000;"></div>
-                  <div class="mono-label" style="font-size:0.65rem; letter-spacing: 1px;">BRIEF</div>
-                </div>
-
-                <!-- Step 2: SIMULATION -->
-                <div class="v-step"
-                  style="opacity:0.4; display:flex; gap:16px; align-items:center; padding-left: 16px;">
-                  <div style="width:8px; height:8px; background:#556; border-radius:50%; border:1px solid #000;"></div>
-                  <div class="mono-label" style="font-size:0.65rem; letter-spacing: 1px;">SIMULATION</div>
-                </div>
-
-                <!-- Step 3: DÉBRIEF -->
-                <div class="v-step"
-                  style="opacity:0.4; display:flex; gap:16px; align-items:center; padding-left: 16px;">
-                  <div style="width:8px; height:8px; background:#556; border-radius:50%; border:1px solid #000;"></div>
-                  <div class="mono-label" style="font-size:0.65rem; letter-spacing: 1px;">DÉBRIEF</div>
-                </div>
-
-                <!-- Step 4: SUIVI (Active) -->
-                <div class="v-step active" style="display:flex; gap:16px; align-items:center; padding-left: 14.5px;">
-                  <div
-                    style="width:11px; height:11px; background:var(--primary-cyan); border-radius:50%; box-shadow: 0 0 15px var(--primary-cyan); z-index:1;">
-                  </div>
-                  <div class="mono-label"
-                    style="font-size:0.85rem; color:var(--primary-cyan); font-weight: 800; text-shadow: 0 0 12px rgba(0,242,255,0.5); letter-spacing: 1.5px;">
-                    SUIVI</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Dashboard Container (Cohorte + Filter + Export) -->
-            <div class="reveal dashboard-container"
-              style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; gap: 20px;">
-              <!-- Header -->
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
-                <div>
-                  <h3 style="font-size: 1.1rem; margin-bottom: 5px; color: #fff; font-weight: 700;">Suivi de Cohorte •
-                    Promotion 2026</h3>
-                  <p class="subtitle" style="margin:0; font-family: 'IBM Plex Mono'; font-size: 0.75rem; opacity: 0.7;">
-                    Groupe A • 42 étudiants actifs</p>
-                </div>
-                <div style="display: flex; gap: 12px;">
-                  <div
-                    style="font-size: 0.65rem; color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); padding: 8px 15px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
-                    Filtre: Tous les scénarios ▾</div>
-
-                </div>
-              </div>
-
-              <!-- Content Grid -->
-              <div style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 25px;">
-                <!-- Student Table (Lefthand Column) -->
-                <div>
-                  <div class="students-header-row"
-                    style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; gap: 15px; padding: 0 10px 10px 10px; font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <div>Étudiant</div>
-                    <div style="text-align: center; color: var(--primary-cyan); font-weight: 800;">DKA</div>
-                    <div style="text-align: center; color: var(--primary-cyan); font-weight: 800;">PolyT</div>
-                    <div style="text-align: center; color: var(--primary-cyan); font-weight: 800; white-space:nowrap;">
-                      Score Global</div>
-                    <div style="text-align: right;">Dernier Accès</div>
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 10px;">
-                    <!-- Row 1 -->
-                    <div class="dashboard-row"
-                      style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; gap: 15px; align-items: center; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.75rem;">
-                      <div style="display: flex; align-items: center; gap: 10px;">
-                        <div
-                          style="width: 22px; height: 22px; background: linear-gradient(135deg, var(--primary-cyan), #0066cc); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: #000; font-weight: 800;">
-                          AM</div>
-                        <span style="color: #fff; font-weight: 600;">Alice M.</span>
-                      </div>
-                      <div style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">
-                        9.0
-                      </div>
-                      <div style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">
-                        8.5
-                      </div>
-                      <div style="text-align: center; color: #fff; font-family: 'IBM Plex Mono'; font-weight: 800;">8.8
-                      </div>
-                      <div style="text-align: right; color: rgba(255,255,255,0.4); font-size: 0.65rem;">Il y a 2h</div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="dashboard-row"
-                      style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; gap: 15px; align-items: center; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.75rem;">
-                      <div style="display: flex; align-items: center; gap: 10px;">
-                        <div
-                          style="width: 22px; height: 22px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: #fff; font-weight: 800;">
-                          TB</div>
-                        <span style="color: #fff; font-weight: 600;">Thomas B.</span>
-                      </div>
-                      <div style="text-align: center; color: #facc15; font-family: 'IBM Plex Mono'; font-weight: 700;">
-                        6.0
-                      </div>
-                      <div style="text-align: center; color: #facc15; font-family: 'IBM Plex Mono'; font-weight: 700;">
-                        7.0
-                      </div>
-                      <div style="text-align: center; color: #fff; font-family: 'IBM Plex Mono'; font-weight: 800;">6.5
-                      </div>
-                      <div style="text-align: right; color: rgba(255,255,255,0.4); font-size: 0.65rem;">Hier</div>
-                    </div>
-                    <!-- Row 3 -->
-                    <div class="dashboard-row"
-                      style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr; gap: 15px; align-items: center; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.75rem;">
-                      <div style="display: flex; align-items: center; gap: 10px;">
-                        <div
-                          style="width: 22px; height: 22px; background: linear-gradient(135deg, #bf95f9, #9b6dff); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: #000; font-weight: 800;">
-                          SL</div>
-                        <span style="color: #fff; font-weight: 600;">Sarah L.</span>
-                      </div>
-                      <div style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">
-                        9.5
-                      </div>
-                      <div style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">
-                        9.0
-                      </div>
-                      <div style="text-align: center; color: #fff; font-family: 'IBM Plex Mono'; font-weight: 800;">9.3
-                      </div>
-                      <div style="text-align: right; color: rgba(255,255,255,0.4); font-size: 0.65rem;">Il y a 3j</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Pedagogical Insights (Righthand Column) -->
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                  <!-- Insight 1: Priorités -->
-                  <div
-                    style="background: rgba(255,188,46,0.015); border: 1px solid rgba(255,188,46,0.08); border-radius: 8px; padding: 12px;">
-                    <div
-                      style="font-size: 0.55rem; color: #ffbc2e; text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
-                      <span style="width: 5px; height: 5px; background: #ffbc2e; border-radius: 50%;"></span>
-                      Priorités pédagogiques
-                    </div>
-                    <div
-                      style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
-                      <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.7rem; font-weight: 600; color: #fff;">Thomas B.</span>
-                        <span style="font-size: 0.6rem; color: #fb7185; font-family: 'IBM Plex Mono';">-1.2 pts</span>
-                      </div>
-                      <div style="font-size: 0.6rem; opacity: 0.4; margin-top: 2px;">Difficulté : Scénario PolyT (AVP)
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Insight 2: Impact -->
-                  <div
-                    style="background: rgba(0,242,255,0.01); border: 1px solid rgba(0,242,255,0.06); border-radius: 8px; padding: 12px;">
-                    <div
-                      style="font-size: 0.55rem; color: var(--primary-cyan); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-                      <span
-                        style="width: 5px; height: 5px; background: var(--primary-cyan); border-radius: 50%;"></span>
-                      Impact de la formation
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 6px;">
-                      <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.65rem; opacity: 0.6;">Dépistage précoce</span>
-                        <span
-                          style="font-size: 0.65rem; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">+36%</span>
-                      </div>
-                      <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.65rem; opacity: 0.6;">Sécurité patient</span>
-                        <span
-                          style="font-size: 0.65rem; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">-87%</span>
-                      </div>
-                      <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.65rem; opacity: 0.6;">Réactivité</span>
-                        <span
-                          style="font-size: 0.65rem; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">-66%</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Engagement Box -->
-                  <div
-                    style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; padding: 10px; text-align: center;">
-                    <div style="font-size: 0.5rem; color: rgba(255,255,255,0.3); text-transform: uppercase;">Engagement
-                      promotion : <span style="color: #fff; font-weight: 700;">+22%</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Dashboard Status Bar -->
-              <div
-                style="background: rgba(0,0,0,0.2); padding: 12px 30px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center;">
-                <span
-                  style="font-size: 0.6rem; color: rgba(255,255,255,0.3); font-family: 'IBM Plex Mono'; letter-spacing: 1px;">DONNÉES
-                  SÉCURISÉES • MISE À JOUR TEMPS RÉEL</span>
-                <div
-                  style="background: rgba(0, 242, 255, 0.1); border: 1px solid rgba(0, 242, 255, 0.2); padding: 4px 10px; border-radius: 4px; font-size: 0.65rem; color: var(--primary-cyan); font-weight: 700;">
-                  Taux de réussite : 89%
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a href="#slide-trace-2" class="scroll-arrow reveal" aria-label="Slide suivante">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5" />
-        </svg>
-      </a>
-    </section>
 
     <!-- DUPLICATE SLIDE SUIVI (TRACE 2) -->
     <section id="slide-trace-2" class="slide pitch-slide">
       <div class="safe">
         <div class="slide-header">
-          <h2 class="reveal ultra-title">Suivi & traçabilité (Copie)</h2>
+          <h2 class="reveal ultra-title">Suivi & traçabilité</h2>
           <p class="subtitle reveal single-line">Suivi de groupe • Exports PDF individuels</p>
         </div>
 
@@ -1151,7 +982,7 @@
 
             <!-- RIGHT COL: New Layout Grid (65% / 35%) -->
             <div class="reveal new-content-grid"
-              style="display: grid; grid-template-columns: 65fr 35fr; gap: 20px; align-items: start; height: 100%;">
+              style="display: grid; grid-template-columns: 68fr 32fr; gap: 20px; align-items: start; height: 100%;">
 
               <!-- 1. LEFT: Cohort Table Card (Large) -->
               <div
@@ -1188,211 +1019,183 @@
 
                 <!-- Table Header -->
                 <div
-                  style="display: grid; grid-template-columns: 1.8fr 1.2fr 1fr 0.8fr 2.5fr 1.4fr; gap: 15px; padding-bottom: 12px; font-size: 0.65rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: center;">
+                  style="display: grid; grid-template-columns: 2.5fr 1.5fr 4fr; gap: 15px; padding: 0 10px 12px 10px; font-size: 0.65rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: center;">
                   <div>Apprenant</div>
-                  <div style="text-align: center;">Complétion</div>
-                  <div style="text-align: center;">Score Global</div>
-                  <div style="text-align: center;">Δ 7j</div>
+                  <div style="text-align: right; padding-right: 10px;">Performance</div>
                   <div>Dernière Simulation</div>
-                  <div>Alertes</div>
                 </div>
 
                 <!-- Rows (Increased Font Size >= 14px) -->
-                <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 15px;">
+                <div class="cohort-list" style="display: flex; flex-direction: column; gap: 6px; margin-top: 15px;">
                   <!-- Row 1: Alice M. -->
-                  <div
-                    style="display: grid; grid-template-columns: 1.8fr 1.2fr 1fr 0.8fr 2.5fr 1.4fr; gap: 15px; align-items: center; padding: 8px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+                  <div class="cohort-row"
+                    style="display: grid; grid-template-columns: 2.5fr 1.5fr 4fr; gap: 10px; align-items: center; padding: 5px 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; font-size: 13px;">
                     <!-- Etudiant -->
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
                       <div
-                        style="width: 28px; height: 28px; background: linear-gradient(135deg, var(--primary-cyan), #0066cc); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #000; font-weight: 800;">
+                        style="width: 24px; height: 24px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">
                         AM</div>
-                      <span style="color: #fff; font-weight: 600; white-space: nowrap;">Alice M.</span>
+                      <span style="color: #fff; font-weight: 500; white-space: nowrap; font-size: 0.85rem;">Alice
+                        M.</span>
                     </div>
 
-                    <!-- Complétion -->
-                    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
-                      <span style="font-size: 0.75rem; color: #fff; font-family: 'IBM Plex Mono';">8/10</span>
-                      <div style="width: 60px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
-                        <div style="width: 80%; height: 100%; background: #4ade80; border-radius: 2px;"></div>
+                    <!-- Performance (Score + Completion) -->
+                    <div
+                      style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right; padding-right: 10px;">
+                      <div style="display: flex; align-items: baseline; gap: 8px;">
+                        <span
+                          style="font-size: 0.65rem; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono';">8/10</span>
+                        <div style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-weight: 700;">9.0
+                        </div>
+                      </div>
+                      <div style="width: 45px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px;">
+                        <div
+                          style="width: 80%; height: 100%; background: var(--primary-cyan); border-radius: 1px; box-shadow: 0 0 8px rgba(0,242,255,0.4);">
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Score Global -->
-                    <div style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">9.0
-                    </div>
-
-                    <!-- Delta 7j -->
-                    <div
-                      style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700; font-size: 0.75rem;">
-                      +0.5</div>
-
                     <!-- Dernière Simulation -->
                     <div
-                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.7);">
-                      Arrêt Card. • <span style="color:#4ade80; font-weight:700;">9.0</span> • 15 min • 2h
+                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                      Arrêt Card. • <span style="color:#fff;">9.0</span> • 15 min • 2h
                     </div>
-
-                    <!-- Alertes -->
-                    <div style="display: flex; gap: 6px;"></div>
                   </div>
 
                   <!-- Row 2: Thomas B. -->
-                  <div
-                    style="display: grid; grid-template-columns: 1.8fr 1.2fr 1fr 0.8fr 2.5fr 1.4fr; gap: 15px; align-items: center; padding: 8px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+                  <div class="cohort-row"
+                    style="display: grid; grid-template-columns: 2.5fr 1.5fr 4fr; gap: 10px; align-items: center; padding: 5px 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; font-size: 13px;">
                     <!-- Etudiant -->
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
                       <div
-                        style="width: 28px; height: 28px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #fff; font-weight: 800;">
+                        style="width: 24px; height: 24px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">
                         TB</div>
-                      <span style="color: #fff; font-weight: 600; white-space: nowrap;">Thomas B.</span>
+                      <span style="color: #fff; font-weight: 500; white-space: nowrap; font-size: 0.85rem;">Thomas
+                        B.</span>
                     </div>
 
-                    <!-- Complétion -->
-                    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
-                      <span style="font-size: 0.75rem; color: #fff; font-family: 'IBM Plex Mono';">4/10</span>
-                      <div style="width: 60px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
-                        <div style="width: 40%; height: 100%; background: #facc15; border-radius: 2px;"></div>
+                    <!-- Performance (Score + Completion) -->
+                    <div
+                      style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right; padding-right: 10px;">
+                      <div style="display: flex; align-items: baseline; gap: 8px;">
+                        <span
+                          style="font-size: 0.65rem; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono';">4/10</span>
+                        <div style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-weight: 700;">6.0
+                        </div>
+                      </div>
+                      <div style="width: 45px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px;">
+                        <div style="width: 40%; height: 100%; background: var(--primary-cyan); border-radius: 1px;">
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Score Global -->
-                    <div style="text-align: center; color: #facc15; font-family: 'IBM Plex Mono'; font-weight: 700;">6.0
-                    </div>
-
-                    <!-- Delta 7j -->
-                    <div
-                      style="text-align: center; color: #fb7185; font-family: 'IBM Plex Mono'; font-weight: 700; font-size: 0.75rem;">
-                      -1.2</div>
-
                     <!-- Dernière Simulation -->
                     <div
-                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.7);">
-                      PolyT • <span style="color:#facc15; font-weight:700;">4.5</span> • 22 min • Hier
-                    </div>
-
-                    <!-- Alertes -->
-                    <div style="display: flex; gap: 6px;">
-                      <!-- Badges removed per user request -->
+                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                      PolyT • <span style="color:#fff;">4.5</span> • 22 min • Hier
                     </div>
                   </div>
 
                   <!-- Row 3: Sarah L. -->
-                  <div
-                    style="display: grid; grid-template-columns: 1.8fr 1.2fr 1fr 0.8fr 2.5fr 1.4fr; gap: 15px; align-items: center; padding: 8px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+                  <div class="cohort-row"
+                    style="display: grid; grid-template-columns: 2.5fr 1.5fr 4fr; gap: 10px; align-items: center; padding: 5px 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; font-size: 13px;">
                     <!-- Etudiant -->
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
                       <div
-                        style="width: 28px; height: 28px; background: linear-gradient(135deg, #bf95f9, #9b6dff); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #000; font-weight: 800;">
+                        style="width: 24px; height: 24px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">
                         SL</div>
-                      <span style="color: #fff; font-weight: 600; white-space: nowrap;">Sarah L.</span>
+                      <span style="color: #fff; font-weight: 500; white-space: nowrap; font-size: 0.85rem;">Sarah
+                        L.</span>
                     </div>
 
-                    <!-- Complétion -->
-                    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
-                      <span style="font-size: 0.75rem; color: #fff; font-family: 'IBM Plex Mono';">10/10</span>
-                      <div style="width: 60px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
-                        <div style="width: 100%; height: 100%; background: #4ade80; border-radius: 2px;"></div>
+                    <!-- Performance (Score + Completion) -->
+                    <div
+                      style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right; padding-right: 10px;">
+                      <div style="display: flex; align-items: baseline; gap: 8px;">
+                        <span
+                          style="font-size: 0.65rem; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono';">10/10</span>
+                        <div style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-weight: 700;">9.5
+                        </div>
+                      </div>
+                      <div style="width: 45px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px;">
+                        <div
+                          style="width: 100%; height: 100%; background: var(--primary-cyan); border-radius: 1px; box-shadow: 0 0 8px rgba(0,242,255,0.3);">
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Score Global -->
-                    <div style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700;">9.5
-                    </div>
-
-                    <!-- Delta 7j -->
-                    <div
-                      style="text-align: center; color: #4ade80; font-family: 'IBM Plex Mono'; font-weight: 700; font-size: 0.75rem;">
-                      +0.2</div>
-
                     <!-- Dernière Simulation -->
                     <div
-                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.7);">
-                      Moteur • <span style="color:#4ade80; font-weight:700;">9.8</span> • 10 min • 3j
+                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                      Moteur • <span style="color:#fff;">9.8</span> • 10 min • 3j
                     </div>
-
-                    <!-- Alertes -->
-                    <div style="display: flex; gap: 6px;"></div>
                   </div>
 
-                  <!-- Row 4: Lucas P. (Added) -->
-                  <div
-                    style="display: grid; grid-template-columns: 1.8fr 1.2fr 1fr 0.8fr 2.5fr 1.4fr; gap: 15px; align-items: center; padding: 8px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+                  <!-- Row 4: Lucas P. -->
+                  <div class="cohort-row"
+                    style="display: grid; grid-template-columns: 2.5fr 1.5fr 4fr; gap: 10px; align-items: center; padding: 5px 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; font-size: 13px;">
                     <!-- Etudiant -->
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
                       <div
-                        style="width: 28px; height: 28px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #fff; font-weight: 800;">
+                        style="width: 24px; height: 24px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">
                         LP</div>
-                      <span style="color: #fff; font-weight: 600; white-space: nowrap;">Lucas P.</span>
+                      <span style="color: #fff; font-weight: 500; white-space: nowrap; font-size: 0.85rem;">Lucas
+                        P.</span>
                     </div>
 
-                    <!-- Complétion -->
-                    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
-                      <span style="font-size: 0.75rem; color: #fff; font-family: 'IBM Plex Mono';">3/10</span>
-                      <div style="width: 60px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
-                        <div style="width: 30%; height: 100%; background: #fb7185; border-radius: 2px;"></div>
+                    <!-- Performance (Score + Completion) -->
+                    <div
+                      style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right; padding-right: 10px;">
+                      <div style="display: flex; align-items: baseline; gap: 8px;">
+                        <span
+                          style="font-size: 0.65rem; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono';">3/10</span>
+                        <div style="color: #fb7185; font-family: 'IBM Plex Mono'; font-weight: 700;">4.2</div>
+                      </div>
+                      <div style="width: 45px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px;">
+                        <div style="width: 30%; height: 100%; background: var(--primary-cyan); border-radius: 1px;">
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Score Global -->
-                    <div style="text-align: center; color: #fb7185; font-family: 'IBM Plex Mono'; font-weight: 700;">4.2
-                    </div>
-
-                    <!-- Delta 7j -->
-                    <div
-                      style="text-align: center; color: #fb7185; font-family: 'IBM Plex Mono'; font-weight: 700; font-size: 0.75rem;">
-                      -0.5</div>
-
                     <!-- Dernière Simulation -->
                     <div
-                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.7);">
-                      Choc • <span style="color:#fb7185; font-weight:700;">3.8</span> • 8 min • 2j
-                    </div>
-
-                    <!-- Alertes -->
-                    <div style="display: flex; gap: 6px;">
-                      <div
-                        style="font-size: 0.55rem; background: rgba(251, 113, 133, 0.2); color: #fb7185; padding: 2px 6px; border-radius: 3px; border: 1px solid rgba(251, 113, 133, 0.3); font-weight: 700;">
-                        Retard</div>
+                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                      Choc • <span style="color:#fff;">3.8</span> • 8 min • 2j
                     </div>
                   </div>
 
-                  <!-- Row 5: Emma R. (Added) -->
-                  <div
-                    style="display: grid; grid-template-columns: 1.8fr 1.2fr 1fr 0.8fr 2.5fr 1.4fr; gap: 15px; align-items: center; padding: 8px 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+                  <!-- Row 5: Emma R. -->
+                  <div class="cohort-row"
+                    style="display: grid; grid-template-columns: 2.5fr 1.5fr 4fr; gap: 10px; align-items: center; padding: 5px 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); border-radius: 8px; font-size: 13px;">
                     <!-- Etudiant -->
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
                       <div
-                        style="width: 28px; height: 28px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #fff; font-weight: 800;">
+                        style="width: 24px; height: 24px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 800; border: 1px solid rgba(255,255,255,0.1);">
                         ER</div>
-                      <span style="color: #fff; font-weight: 600; white-space: nowrap;">Emma R.</span>
+                      <span style="color: #fff; font-weight: 500; white-space: nowrap; font-size: 0.85rem;">Emma
+                        R.</span>
                     </div>
 
-                    <!-- Complétion -->
-                    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
-                      <span style="font-size: 0.75rem; color: #fff; font-family: 'IBM Plex Mono';">5/10</span>
-                      <div style="width: 60px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
-                        <div style="width: 50%; height: 100%; background: #facc15; border-radius: 2px;"></div>
+                    <!-- Performance (Score + Completion) -->
+                    <div
+                      style="display: flex; flex-direction: column; gap: 4px; align-items: flex-end; text-align: right; padding-right: 10px;">
+                      <div style="display: flex; align-items: baseline; gap: 8px;">
+                        <span
+                          style="font-size: 0.65rem; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono';">5/10</span>
+                        <div style="color: var(--primary-cyan); font-family: 'IBM Plex Mono'; font-weight: 700;">5.8
+                        </div>
+                      </div>
+                      <div style="width: 45px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 1px;">
+                        <div style="width: 50%; height: 100%; background: var(--primary-cyan); border-radius: 1px;">
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Score Global -->
-                    <div style="text-align: center; color: #facc15; font-family: 'IBM Plex Mono'; font-weight: 700;">5.8
-                    </div>
-
-                    <!-- Delta 7j -->
-                    <div
-                      style="text-align: center; color: #fff; font-family: 'IBM Plex Mono'; font-weight: 700; font-size: 0.75rem;">
-                      =</div>
-
                     <!-- Dernière Simulation -->
                     <div
-                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.7);">
-                      Moteur • <span style="color:#facc15; font-weight:700;">6.0</span> • 12 min • Hier
+                      style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; color: rgba(255,255,255,0.5);">
+                      Moteur • <span style="color:#fff;">6.0</span> • 12 min • Hier
                     </div>
-
-                    <!-- Alertes -->
-                    <div style="display: flex; gap: 6px;"></div>
                   </div>
                 </div>
               </div>
