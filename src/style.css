@@ -3784,3 +3784,40 @@ ul.clean li::before {
     letter-spacing: 0 !important;
   }
 }
+
+/* FINAL OVERRIDE FOR SLIDE IMPLEMENTATION (PROJET PILOTE) MOBILE */
+@media (max-width: 768px) {
+
+  /* Change the grid to stack vertically */
+  #slide-implementation [style*="display: grid; grid-template-columns: 1fr 1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  /* Adjust card styles */
+  #slide-implementation .feature-card {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 15px !important;
+  }
+
+  #slide-implementation h3 {
+    font-size: 1rem !important;
+  }
+
+  #slide-implementation p {
+    font-size: 0.75rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  #slide-implementation ul {
+    font-size: 0.75rem !important;
+  }
+
+  /* Adjust the resource block at the bottom */
+  #slide-implementation [style*="display: flex; justify-content: space-around"] {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+}
