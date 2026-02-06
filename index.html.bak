@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctiplay — Pitch Médical</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/monitor.css">
+  <link rel="stylesheet" href="src/cockpit.css">
+  <link rel="stylesheet" href="src/dashboard.css">
+</head>
+
+<body>
+  <div class="topbar">
+    <a href="https://doctiplay.com" target="_blank" class="brand" title="Doctiplay"
+      style="text-decoration: none; cursor: pointer;">
+      <div class="brand-logo">
+        <svg viewBox="0 0 120 40" fill="none">
+          <path d="M5 20h15l3-10l5 20l4-15l3 5h10" stroke="#00f2ff" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M45 8h10c8 0 12 5 12 12s-4 12-12 12H45V8z" stroke="#00f2ff" stroke-width="2.5"
+            stroke-linejoin="round" />
+          <path d="M51 15l6 5l-6 5v-10z" fill="#00f2ff" />
+          <path d="M70 20h10l3-10l5 20l4-15l3 5h15" stroke="#00f2ff" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+      </div>
+      <span class="logo-text">DOCTI<span>PLAY</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation">
+      <a href="#slide-1">Accueil</a>
+      <a href="#slide-intro">Défis</a>
+      <a href="#slide-solution">Solution</a>
+      <a href="#slide-pharma">Technologie</a>
+      <a href="#slide-5">Débrief</a>
+      <a href="#slide-progression">Suivi</a>
+      <a href="#slide-scenarios">Scénarios</a>
+      <a href="#slide-implementation">Pilote</a>
+    </nav>
+
+    <div class="top-actions">
+      <a href="https://app.doctiplay.com" target="_blank" class="btn-top">Tester le simulateur</a>
+      <button id="pdf-export-btn" class="btn-top" title="Export PDF"
+        style="filter: blur(1.2px); opacity: 0.6; cursor: default;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          style="width: 14px; height: 14px; margin-right: 6px;">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="progress-bar" aria-hidden="true">
+    <div class="progress-fill" id="indicator"></div>
+  </div>
+
+  <div class="snap-container" id="main">
+
+    <!-- SLIDE 1: COVER - Premium Hero -->
+    <section id="slide-1" class="slide pitch-slide slide-hero">
+      <!-- Premium Background Effects -->
+      <div class="hero-bg-effects">
+        <div class="hero-gradient"></div>
+        <div class="hero-noise"></div>
+        <div class="hero-ecg-pattern"></div>
+      </div>
+
+      <div class="safe">
+        <div class="hero-layout">
+          <!-- LEFT COLUMN: Text Content -->
+          <div class="hero-text-col">
+            <!-- H1 Title -->
+            <h1 class="hero-h1 reveal">
+              Et s'il était possible de gérer 20 arrêts cardiaques...<br>avant d'en voir un vrai ?
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle reveal">
+              Répéter sans limites, avant que ça compte vraiment.
+            </p>
+
+            <!-- Feature Chips -->
+            <div class="hero-chips reveal">
+              <div class="hero-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+                <span>Haute fidélité : constantes en temps réel</span>
+              </div>
+              <div class="hero-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                <span>Débrief & traçabilité : timeline, actions, scores</span>
+              </div>
+              <div class="hero-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span>Déploiement simple : 100% web, multi-postes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Simulation Preview Animation -->
+          <div class="hero-animation-col reveal">
+            <div class="simu-preview-wrapper">
+              <!-- Standalone Brand Logo Above Card -->
+              <div class="simu-brand-header-external">
+                <svg class="simu-logo-svg" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Heartbeat Left -->
+                  <path d="M5 20 L20 20 L23 15 L27 25 L30 20 L40 20" fill="none" stroke="#00f2ff" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- D + Play Icon -->
+                  <rect x="45" y="8" width="24" height="24" rx="4" fill="none" stroke="#00f2ff" stroke-width="2.5" />
+                  <path d="M53 14 L63 20 L53 26 Z" fill="#00f2ff" />
+                  <!-- Heartbeat Right -->
+                  <path d="M75 20 L85 20 L88 15 L92 25 L95 20 L110 20" fill="none" stroke="#00f2ff" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Text -->
+                  <text x="120" y="27" font-family="Inter, sans-serif" font-weight="900" font-size="20"
+                    fill="white">DOCTI</text>
+                  <text x="182" y="27" font-family="Inter, sans-serif" font-weight="900" font-size="20"
+                    fill="#00f2ff">PLAY</text>
+                </svg>
+              </div>
+              <!-- Back Cards for Depth Removed -->
+              <!-- Log Card (Journal de session) - Stacked Behind -->
+              <div class="simu-card-base simu-log-card">
+                <div class="simu-log-header">
+                  <div class="simu-log-title">JOURNAL DE SESSION</div>
+                  <div class="simu-log-status">
+                    <span class="log-status-text">CHIFFRÉ</span>
+                    <span class="log-status-dot"></span>
+                  </div>
+                </div>
+                <div class="simu-log-content">
+                  <div class="log-entry">
+                    <span class="log-time">[10:42:15]</span>
+                    <span class="log-text">SYSTÈME — Constantes initialisées</span>
+                  </div>
+                  <div class="log-entry">
+                    <span class="log-time">[10:43:08]</span>
+                    <span class="log-text">ÉLÈVE — Prise de constantes</span>
+                  </div>
+                  <div class="log-entry">
+                    <span class="log-time">[10:43:42]</span>
+                    <span class="log-text">ÉLÈVE — Pose VVP (Bras G)</span>
+                  </div>
+                  <div class="log-entry">
+                    <span class="log-time">[10:44:05]</span>
+                    <span class="log-text">ÉLÈVE — Bilan sanguin demandé</span>
+                  </div>
+                  <div class="log-entry">
+                    <span class="log-time">[10:44:50]</span>
+                    <span class="log-text">SENIOR — Validation protocole</span>
+                  </div>
+                  <div class="log-entry">
+                    <span class="log-time">[10:45:12]</span>
+                    <span class="log-text">SYSTÈME — ECG : Tachycardie</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Simulation Card -->
+              <div class="simu-card-base simu-card-main">
+                <!-- Topbar -->
+                <div class="simu-card-topbar">
+                  <div class="simu-patient-name">PATIENT — Youssef El Amrani</div>
+                  <div class="simu-topbar-right">
+                    <span class="simu-status-tag">SECURE // ENCRYPTED</span>
+                    <span class="simu-time">10:45</span>
+                  </div>
+                </div>
+
+                <!-- Content Body -->
+                <div class="simu-card-body">
+                  <!-- Monitoring Section -->
+                  <div class="simu-monitoring">
+                    <div class="simu-monitor-grid"></div>
+                    <div class="simu-monitor-header"
+                      style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="simu-monitor-label">MONITORING</span>
+                        <span
+                          style="background: rgba(255, 50, 50, 0.2); border: 1px solid rgba(255, 50, 50, 0.5); color: #ff3333; font-size: 0.5rem; padding: 2px 6px; border-radius: 4px; font-weight: 800; animation: pulse-red 1s infinite;">ARRÊT
+                          CARDIAQUE</span>
+                      </div>
+                      <span
+                        style="font-family: 'IBM Plex Mono'; font-size: 0.6rem; color: #ff3333; font-weight: 700;">NO
+                        FLOW 01:32</span>
+                    </div>
+                    <div class="simu-monitor-main">
+                      <div class="simu-ecg-mini">
+                        <div class="simu-ecg-path"></div>
+                      </div>
+                      <div class="simu-vitals">
+                        <div class="simu-vital-item">
+                          <span class="vital-label" style="color: #ff3333;">FC</span>
+                          <span class="vital-val" style="color: #ff3333;">---</span>
+                        </div>
+                        <div class="simu-vital-item">
+                          <span class="vital-label">SpO₂</span>
+                          <span class="vital-val" style="color: rgba(255,255,255,0.5);">--</span>
+                        </div>
+                        <div class="simu-vital-item">
+                          <span class="vital-label">TA</span>
+                          <span class="vital-val" style="color: rgba(255,255,255,0.5);">--/--</span>
+                        </div>
+                        <div class="simu-vital-item">
+                          <span class="vital-label" style="color: #ffd700;">ETCO₂</span>
+                          <span class="vital-val" style="color: #ffd700;">10</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Algo Indicator -->
+                    <div
+                      style="font-family: 'IBM Plex Mono', monospace; font-size: 0.5rem; color: rgba(0, 242, 255, 0.3); margin-top: 6px; padding-top: 4px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 6px;">
+                      <span style="font-weight: 700; color: rgba(0, 242, 255, 0.5);">AHA/ERC</span>
+                      <span style="opacity: 0.8;">Rythme choquable → Défibrillation → RCP 2 min</span>
+                    </div>
+                  </div>
+
+                  <!-- SBAR Context -->
+                  <div class="simu-sbar">
+                    <p class="sbar-text">Patient inconscient, pas de pouls.</p>
+                    <span class="sbar-bold">Objectif : RCP immédiate, défibrillation, sécuriser.</span>
+                  </div>
+
+                  <!-- Action Pills Grouped -->
+                  <div class="simu-actions">
+                    <div class="simu-actions-left">
+                      <div class="simu-pill">Dossier clinique</div>
+                      <div class="simu-pill">Paraclinique</div>
+                      <div class="simu-pill">Transmission</div>
+                    </div>
+
+                    <div class="simu-actions-sep"></div>
+
+                    <div class="simu-actions-right">
+                      <div class="simu-mini-btn">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        APPEL
+                      </div>
+                      <div class="simu-mini-btn">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                          <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+                        </svg>
+                        ORDRES
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#slide-intro" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- SLIDE INTRO: LA SIMULATION DEVIENT LA NORME -->
+    <section id="slide-intro" class="slide pitch-slide slide-intro-hero">
+      <!-- Background Image -->
+      <div class="intro-hero-bg">
+        <img src="/simulation-hero.png" alt="Mannequin de simulation haute fidélité" />
+        <div class="intro-hero-overlay"></div>
+        <div class="intro-hero-vignette"></div>
+        <div class="intro-hero-ecg"></div>
+        <div class="intro-hero-noise"></div>
+        <div class="intro-hero-glow"></div>
+        <div class="intro-hero-text-gradient"></div>
+      </div>
+
+      <div class="safe">
+        <div class="intro-hero-content">
+          <h2 class="intro-hero-title reveal">Comment massifier l'accès à la simulation médicale dans un contexte de
+            ressources limitées ?</h2>
+          <p class="intro-hero-subtitle reveal">Dépendance aux plateaux techniques, disponibilité des formateurs,
+            difficulté à standardiser : un défi structurel.</p>
+          <p class="intro-hero-punch reveal">L’enjeu : une <span class="accent-cyan">haute fidélité</span> rejouable,
+            accessible, mesurable.</p>
+        </div>
+
+        <p class="intro-hero-footer reveal">Du mannequin au patient virtuel interactif.</p>
+      </div>
+
+      <a href="#slide-solution" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+    <!-- SLIDE SOLUTION: LA SOLUTION DOCTIPLAY -->
+    <section id="slide-solution" class="slide pitch-slide slide-solution">
+      <!-- Background Effects -->
+      <div class="solution-bg">
+        <div class="solution-ecg-pattern"></div>
+        <div class="solution-gradient"></div>
+        <div class="solution-noise"></div>
+      </div>
+
+      <div class="safe">
+        <div class="slide-header">
+          <h1 class="reveal ultra-title">La solution : Doctiplay</h1>
+          <p class="subtitle reveal">Plateforme web de simulation clinique interactive (formation initiale & continue),
+            avec débrief mesurable.</p>
+
+          <div class="solution-chips reveal">
+            <span class="sol-chip">Formation initiale</span>
+            <span class="sol-chip">Formation continue</span>
+          </div>
+        </div>
+
+        <div class="solution-grid reveal"
+          style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; max-width: 1000px; margin: 40px auto;">
+          <!-- Block 1 -->
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="width: 64px; height: 64px;">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin: 0;">Patient virtuel interactif</h3>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.4;">Dialogue vocal,
+              symptômes évolutifs, réactions en temps réel</p>
+          </div>
+
+          <!-- Block 2 -->
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="width: 64px; height: 64px;">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin: 0;">Physiologie réaliste</h3>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.4;">Constantes
+              vivantes, pas un scénario scripté</p>
+          </div>
+
+          <!-- Block 3 -->
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" style="width: 64px; height: 64px;">
+              <path
+                d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m0 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v10">
+              </path>
+            </svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #fff; margin: 0;">Débrief automatisé</h3>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.4;">Timeline horodatée,
+              points critiques, exports PDF</p>
+          </div>
+        </div>
+
+        <div class="solution-result-bar reveal">
+          <span class="res-text">Complète le mannequin : plus de répétitions, plus de standardisation, sans alourdir la
+            logistique.</span>
+          <div class="res-badges">
+            <span class="res-badge">100% web</span>
+          </div>
+        </div>
+
+        <div class="rgpd-micro reveal">
+          Données fictives / pseudonymisées — conforme RGPD (selon configuration).
+        </div>
+      </div>
+
+      <a href="#slide-pharma" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+
+
+    <!-- SLIDE: AVANT / APRÈS - MOTEUR PHARMACODYNAMIQUE -->
+    <section id="slide-pharma" class="slide pitch-slide slide-pharma">
+      <!-- Background Effects -->
+      <div class="pharma-bg">
+        <div class="pharma-gradient"></div>
+        <div class="pharma-noise"></div>
+      </div>
+
+      <div class="safe">
+        <!-- Header -->
+        <div class="slide-header">
+          <h2 class="reveal ultra-title">Moteur pharmacodynamique en temps réel</h2>
+          <p class="subtitle reveal">La différence entre une simulation scriptée… et un patient qui réagit.</p>
+        </div>
+
+        <!-- Split Screen -->
+        <div class="pharma-split reveal">
+          <!-- Colonne Gauche: AVANT -->
+          <div class="pharma-col pharma-before">
+            <span class="pharma-label">AVANT</span>
+            <h3 class="pharma-col-title">Constantes figées</h3>
+            <p class="pharma-col-desc">Le scénario déroule. Les effets des traitements sont peu ou pas dynamiques.
+            </p>
+
+            <!-- Mini Monitor Plat -->
+            <div class="pharma-visual pharma-visual-flat">
+              <div class="flat-monitor">
+                <!-- Graphe plat -->
+                <div class="flat-graph">
+                  <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path d="M0,22 L40,21 L80,22 L120,21 L160,22 L200,21" fill="none" stroke="rgba(255,255,255,0.25)"
+                      stroke-width="1.5" />
+                  </svg>
+                </div>
+                <div class="flat-values">
+                  <span>FC 80</span>
+                  <span>PA 120/80</span>
+                  <span>SpO₂ 98%</span>
+                </div>
+              </div>
+            </div>
+
+            <ul class="pharma-points">
+              <li>Réactions limitées</li>
+              <li>Peu de titration</li>
+              <li>Débrief moins objectivable</li>
+            </ul>
+          </div>
+
+          <!-- Séparateur -->
+          <div class="pharma-divider"></div>
+
+          <!-- Colonne Droite: APRÈS -->
+          <div class="pharma-col pharma-after">
+            <span class="pharma-label pharma-label-cyan">AVEC DOCTIPLAY</span>
+            <h3 class="pharma-col-title">Constantes vivantes</h3>
+            <p class="pharma-col-desc">Les constantes réagissent aux traitements comme au terrain, en temps réel.
+            </p>
+
+            <!-- Monitor Vivant (Scope Médical Réaliste) -->
+            <div class="pharma-visual pharma-visual-live">
+              <div class="pharma-glow-bg"></div>
+              <div class="scope-monitor-doctiplay">
+                <div class="scope-header">
+                  <span class="scope-header-title">Simulation en temps réel</span>
+                  <div class="scope-header-tag">Standardisé</div>
+                </div>
+
+                <div class="scope-body">
+                  <div class="scope-waves">
+                    <!-- ECG Wave (Rythme FC) -->
+                    <div class="wave-container ecg">
+                      <div class="wave-label">ECG / Rythme cardiaque</div>
+                      <div class="wave-box">
+                        <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+                          <path class="docti-wave-ecg"
+                            d="M0,35 L20,35 L24,35 L28,10 L32,50 L36,35 L60,35 L120,35 L124,35 L128,10 L132,50 L136,35 L160,35 L220,35 L224,35 L228,10 L232,50 L236,35 L260,35 L320,35 L324,35 L328,10 L332,50 L336,35 L360,35 L400,35" />
+                        </svg>
+                      </div>
+                    </div>
+                    <!-- Pleth Wave (Rythme lent) -->
+                    <div class="wave-container pleth">
+                      <div class="wave-label">Pléthysmographie / Respiration</div>
+                      <div class="wave-box">
+                        <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+                          <path class="docti-wave-pleth"
+                            d="M0,40 C20,40 40,10 60,10 C80,10 100,40 120,40 C140,40 160,10 180,10 C200,10 220,40 240,40 C260,40 280,10 300,10 C320,10 340,40 360,40 C380,40 400,10 420,10" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="scope-sidebar">
+                    <div class="sidebar-stat stat-cyan">
+                      <span class="stat-label">FC <small>BPM</small></span>
+                      <span class="stat-value">~90</span>
+                    </div>
+                    <div class="sidebar-stat stat-blue">
+                      <span class="stat-label">SpO₂ <small>%</small></span>
+                      <span class="stat-value">~98</span>
+                    </div>
+                    <div class="sidebar-stat stat-gray">
+                      <span class="stat-label">PA <small>mmHg</small></span>
+                      <span class="stat-value">stable</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="scope-footer-docti">
+                  <span>Traitement</span>
+                  <span class="dot">·</span>
+                  <span>Examens</span>
+                  <span class="dot">·</span>
+                  <span>Surveillance</span>
+                </div>
+              </div>
+            </div>
+
+            <ul class="pharma-points pharma-points-cyan">
+              <li>Effet immédiat & retardé</li>
+              <li>Doses & titration</li>
+              <li>Décision → effet → réévaluation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Punchline -->
+        <div class="pharma-punchline reveal">
+          <p class="punchline-main">On ne joue plus un scénario. On traite un patient.</p>
+          <p class="punchline-sub">Chaque action thérapeutique a une conséquence mesurable.</p>
+        </div>
+      </div>
+
+      <a href="#slide-5" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- SLIDE 5: DÉBRIEF ASSISTÉ (NEW DA) -->
+    <section id="slide-5" class="slide pitch-slide">
+      <!-- Background Effects -->
+      <div class="debrief-bg">
+        <div class="debrief-ecg-pattern"></div>
+        <div class="debrief-gradient"></div>
+        <div class="debrief-noise"></div>
+        <div class="debrief-grid-glow"></div>
+      </div>
+
+      <div class="safe"
+        style="padding-bottom: 32px; transform: scale(0.9); transform-origin: top center; width: 111.1%;">
+        <div class="slide-header">
+          <div class="reveal"
+            style="font-family: 'IBM Plex Mono'; font-size: 0.55rem; color: var(--primary-cyan); opacity: 0.7; letter-spacing: 0.15em; margin-bottom: 8px; font-weight: 700;">
+            DÉBRIEF
+          </div>
+          <h2 class="reveal ultra-title">Débrief clinique : le replay de la prise en charge</h2>
+          <p class="subtitle reveal">Timeline horodatée → décisions → points critiques → synthèse PDF</p>
+        </div>
+
+        <div class="slide-content reveal"
+          style="display: grid; grid-template-columns: 58fr 42fr; gap: 24px; margin-top: 20px;">
+
+          <!-- LEFT COL (58%): REPLAY TIMELINE -->
+          <div
+            style="background: rgba(255,255,255,0.015); border: 1px solid rgba(0,242,255,0.08); border-radius: 16px; padding: 20px; box-shadow: 0 8px 32px rgba(0,242,255,0.06); height: 100%; display: flex; flex-direction: column;">
+
+            <!-- Header -->
+            <div style="margin-bottom: 24px;">
+              <h3
+                style="font-size: 1.2rem; color: #fff; font-weight: 700; margin: 0 0 6px 0; font-family: 'IBM Plex Mono', monospace;">
+                JOURNAL DE BORD</h3>
+              <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0; font-family: 'Inter', sans-serif;">
+                Min par min / Actions & Décisions</p>
+            </div>
+
+            <!-- Timeline entries (8 max) -->
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
+
+              <!-- Entry 1 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.018); border-left: 2px solid rgba(0,242,255,0.3); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; min-width: 48px;">15:02</span>
+                <span style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.9);">O₂ 3L/min
+                  administré</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(0,242,255,0.12); color: var(--primary-cyan); padding: 4px 10px; border-radius: 5px; font-weight: 600; letter-spacing: 0.03em;">TRAITEMENT</span>
+              </div>
+
+              <!-- Entry 2 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.018); border-left: 2px solid rgba(0,242,255,0.3); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; min-width: 48px;">15:04</span>
+                <span style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.9);">GDS prescrit</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(0,242,255,0.12); color: var(--primary-cyan); padding: 4px 10px; border-radius: 5px; font-weight: 600; letter-spacing: 0.03em;">DÉCISION</span>
+              </div>
+
+              <!-- Entry 3 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.018); border-left: 2px solid rgba(0,242,255,0.3); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; min-width: 48px;">15:06</span>
+                <span style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.9);">VVP posée (asepsie
+                  validée)</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(0,242,255,0.12); color: var(--primary-cyan); padding: 4px 10px; border-radius: 5px; font-weight: 600; letter-spacing: 0.03em;">TRAITEMENT</span>
+              </div>
+
+
+
+              <!-- Critical Point 1 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: rgba(255,68,68,0.06); border-left: 3px solid rgba(255,68,68,0.5); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: #ff6b6b; font-weight: 700; min-width: 48px;">15:10</span>
+                <span style="flex: 1; font-size: 0.8rem; color: #fff; font-weight: 600;">⚠️ Surveillance ECG :
+                  mise en
+                  place retardée</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(255,68,68,0.2); color: #ff6b6b; padding: 4px 10px; border-radius: 5px; font-weight: 700; letter-spacing: 0.03em;">CRITIQUE</span>
+              </div>
+
+              <!-- Entry 4 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.018); border-left: 2px solid rgba(0,242,255,0.3); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; min-width: 48px;">15:12</span>
+                <span style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.9);">Réévaluation ABCDE</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(0,242,255,0.12); color: var(--primary-cyan); padding: 4px 10px; border-radius: 5px; font-weight: 600; letter-spacing: 0.03em;">SURVEILLANCE</span>
+              </div>
+
+              <!-- Entry 5 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.018); border-left: 2px solid rgba(0,242,255,0.3); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; min-width: 48px;">15:15</span>
+                <span style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.9);">Transmission SBAR au
+                  senior</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(0,242,255,0.12); color: var(--primary-cyan); padding: 4px 10px; border-radius: 5px; font-weight: 600; letter-spacing: 0.03em;">COMMUNICATION</span>
+              </div>
+
+              <!-- Entry 6 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 10px 14px; background: rgba(255,255,255,0.018); border-left: 2px solid rgba(0,242,255,0.3); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; min-width: 48px;">15:18</span>
+                <span style="flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.9);">Insuline IV (ajustement
+                  posologique)</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(0,242,255,0.12); color: var(--primary-cyan); padding: 4px 10px; border-radius: 5px; font-weight: 600; letter-spacing: 0.03em;">DÉCISION</span>
+              </div>
+
+
+
+              <!-- Critical Point 2 -->
+              <div
+                style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; background: rgba(255,68,68,0.06); border-left: 3px solid rgba(255,68,68,0.5); border-radius: 8px;">
+                <span
+                  style="font-family: 'IBM Plex Mono'; font-size: 0.75rem; color: #ff6b6b; font-weight: 700; min-width: 48px;">15:28</span>
+                <span style="flex: 1; font-size: 0.8rem; color: #fff; font-weight: 600;">⚠️ Réévaluation tardive
+                  (attendu : 15:22)</span>
+                <span
+                  style="font-size: 0.52rem; background: rgba(255,68,68,0.2); color: #ff6b6b; padding: 4px 10px; border-radius: 5px; font-weight: 700; letter-spacing: 0.03em;">CRITIQUE</span>
+              </div>
+
+            </div>
+
+            <!-- Score footer -->
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: rgba(0,242,255,0.03); border-radius: 12px; border: 1px solid rgba(0,242,255,0.12); margin-top: 50px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div
+                  style="width: 10px; height: 10px; background: #ff6b6b; border-radius: 50%; box-shadow: 0 0 10px rgba(255,107,107,0.5);">
+                </div>
+                <span style="font-size: 0.95rem; color: rgba(255,255,255,0.9); font-weight: 600;">2 points
+                  critiques
+                  détectés</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px;">
+                <span
+                  style="font-size: 0.85rem; color: rgba(255,255,255,0.6); font-family: 'IBM Plex Mono'; font-weight: 500;">Score
+                  sécurité :</span>
+                <span
+                  style="font-size: 2rem; color: var(--primary-cyan); font-weight: 800; font-family: 'IBM Plex Mono'; line-height: 1;">82</span>
+                <span
+                  style="font-size: 1rem; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono'; font-weight: 600;">/100</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COL (42%): ANALYSIS CARDS -->
+          <div style="display: flex; flex-direction: column; gap: 24px; height: 100%;">
+
+            <!-- Card 1: Analyse pédagogique -->
+            <div
+              style="background: rgba(255,255,255,0.015); border: 1px solid rgba(0,242,255,0.08); border-radius: 16px; padding: 18px; box-shadow: 0 8px 32px rgba(0,242,255,0.06); border-top: 2px solid rgba(0,242,255,0.3);">
+              <h3
+                style="font-size: 1rem; color: var(--primary-cyan); font-weight: 800; margin: 0 0 14px 0; font-family: 'IBM Plex Mono'; letter-spacing: 0.05em;">
+                ANALYSE PÉDAGOGIQUE</h3>
+
+              <!-- Conforme au référentiel -->
+              <div style="margin-bottom: 14px;">
+                <div
+                  style="font-size: 0.65rem; color: rgba(255,255,255,0.5); font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">
+                  Conforme au référentiel</div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                  <div style="font-size: 0.75rem; color: #4ade80; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 0.9rem;">✓</span> ABCDE initial réalisé
+                  </div>
+                  <div style="font-size: 0.75rem; color: #4ade80; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 0.9rem;">✓</span> Réhydratation initiée précocement
+                  </div>
+                  <div style="font-size: 0.75rem; color: #4ade80; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 0.9rem;">✓</span> Ajustement insuline conforme
+                  </div>
+                </div>
+              </div>
+
+              <!-- Écarts observés -->
+              <div style="margin-bottom: 14px;">
+                <div
+                  style="font-size: 0.65rem; color: rgba(255,255,255,0.5); font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em;">
+                  Écarts observés</div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                  <div
+                    style="font-size: 0.75rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px;">
+                    <span style="color: rgba(255,255,255,0.3);">•</span> Surveillance ECG retardée (+2 min)
+                  </div>
+                  <div
+                    style="font-size: 0.75rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 8px;">
+                    <span style="color: rgba(255,255,255,0.3);">•</span> Transmission SBAR incomplète
+                  </div>
+                </div>
+              </div>
+
+              <!-- Points critiques -->
+              <div
+                style="background: rgba(255,68,68,0.04); border-left: 2px solid rgba(255,68,68,0.4); padding: 12px; border-radius: 8px;">
+                <div
+                  style="font-size: 0.65rem; color: rgba(255,107,107,0.9); font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.08em;">
+                  Points critiques</div>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                  <div style="font-size: 0.75rem; color: rgba(255,255,255,0.85); line-height: 1.4;">
+                    • Délai scope ECG : risque arythmie
+                  </div>
+                  <div style="font-size: 0.75rem; color: rgba(255,255,255,0.85); line-height: 1.4;">
+                    • Réévaluation tardive post-insuline
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Synthèse prête à partager -->
+            <div
+              style="background: rgba(255,255,255,0.015); border: 1px solid rgba(0,242,255,0.08); border-radius: 16px; padding: 18px; box-shadow: 0 8px 32px rgba(0,242,255,0.06); flex: 1; display: flex; flex-direction: column;">
+              <h3
+                style="font-size: 1rem; color: var(--primary-cyan); font-weight: 800; margin: 0 0 14px 0; font-family: 'IBM Plex Mono'; letter-spacing: 0.05em;">
+                SYNTHÈSE PRÊTE À PARTAGER</h3>
+
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                <!-- Item 1 -->
+                <div style="display: flex; align-items: start; gap: 12px;">
+                  <div
+                    style="width: 22px; height: 22px; background: rgba(0,242,255,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--primary-cyan)"
+                      stroke-width="2.5">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.8rem; color: #fff; font-weight: 600; margin-bottom: 3px;">Résumé du
+                      cas
+                    </div>
+                    <div style="font-size: 0.68rem; color: rgba(255,255,255,0.6); line-height: 1.4;">Diagnostic,
+                      décisions clés</div>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div style="display: flex; align-items: start; gap: 12px;">
+                  <div
+                    style="width: 22px; height: 22px; background: rgba(0,242,255,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--primary-cyan)"
+                      stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.8rem; color: #fff; font-weight: 600; margin-bottom: 3px;">Points
+                      forts &
+                      axes d'amélioration</div>
+                    <div style="font-size: 0.68rem; color: rgba(255,255,255,0.6); line-height: 1.4;">Feedback
+                      structuré
+                      et objectivé</div>
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div style="display: flex; align-items: start; gap: 12px;">
+                  <div
+                    style="width: 22px; height: 22px; background: rgba(0,242,255,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--primary-cyan)"
+                      stroke-width="2.5">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.8rem; color: #fff; font-weight: 600; margin-bottom: 3px;">Export PDF
+                    </div>
+                    <div style="font-size: 0.68rem; color: rgba(255,255,255,0.6); line-height: 1.4;">Rapport
+                      partageable
+                    </div>
+                    <div
+                      style="font-size: 0.6rem; color: rgba(255,255,255,0.35); margin-top: 4px; font-style: italic; line-height: 1.3;">
+                      Portfolio / dossier apprenant / traçabilité interne</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#slide-progression" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg></a>
+    </section>
+
+
+
+    <!-- NOUVELLE PAGE: SUIVI DE PROGRESSION -->
+    <section id="slide-progression" class="slide pitch-slide">
+      <!-- Universal Premium Background -->
+      <div class="premium-bg">
+        <div class="premium-bg-pattern"></div>
+        <div class="premium-bg-gradient"></div>
+        <div class="premium-bg-noise"></div>
+        <div class="premium-bg-glow"></div>
+      </div>
+      <div class="safe" style="transform: scale(0.9); transform-origin: top center; width: 111.1%;">
+        <div class="slide-header">
+          <h2 class="reveal ultra-title">Suivi de progression</h2>
+          <p class="subtitle reveal single-line">Pilotage pédagogique • Analytics en temps réel</p>
+        </div>
+
+        <!-- Intro Tagline -->
+        <p class="reveal"
+          style="font-size: 1.1rem; color: rgba(255,255,255,0.8); text-align: center; margin: 10px 0 30px; font-weight: 500;">
+          En un coup d'œil : qui décroche, qui progresse, où agir.</p>
+
+        <div class="slide-content reveal"
+          style="display: flex; flex-direction: column; gap: 30px; padding: 20px 0; width: 100%; max-width: 1100px; margin: 0 auto;">
+
+          <!-- SECTION 1: KPI Cards (3 cards in row) -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <!-- KPI 1: Sessions -->
+            <div
+              style="background: rgba(26, 38, 64, 0.6); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+              <div
+                style="font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em;">
+                Sessions (30j)</div>
+              <div
+                style="font-size: 2.5rem; font-weight: 800; color: #00f2ff; font-family: 'IBM Plex Mono', monospace;">67
+              </div>
+            </div>
+
+            <!-- KPI 2: Score groupe -->
+            <div
+              style="background: rgba(26, 38, 64, 0.6); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+              <div
+                style="font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em;">
+                Score groupe</div>
+              <div
+                style="font-size: 2.5rem; font-weight: 800; color: #00f2ff; font-family: 'IBM Plex Mono', monospace;">
+                6.9<span style="font-size: 1.2rem; color: rgba(255,255,255,0.5);">/10</span></div>
+            </div>
+
+            <!-- KPI 3: Temps moyen -->
+            <div
+              style="background: rgba(26, 38, 64, 0.6); border: 1px solid rgba(0, 242, 255, 0.15); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+              <div
+                style="font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em;">
+                Temps moyen</div>
+              <div
+                style="font-size: 2.5rem; font-weight: 800; color: #00f2ff; font-family: 'IBM Plex Mono', monospace;">
+                14<span style="font-size: 1.2rem; color: rgba(255,255,255,0.5);"> min</span></div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: Simple Progress Chart -->
+          <div
+            style="background: rgba(10, 22, 40, 0.5); border: 1px solid rgba(0, 242, 255, 0.1); border-radius: 16px; padding: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h3 style="font-size: 1rem; color: #fff; margin: 0; font-weight: 700;">Progression du score</h3>
+              <span style="font-size: 0.85rem; color: rgba(0, 242, 255, 0.8); font-weight: 600;">+18% vs mois
+                précédent</span>
+            </div>
+            <!-- Minimal Chart -->
+            <svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width: 100%; height: 120px;">
+              <!-- Grid lines -->
+              <line x1="0" y1="30" x2="600" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+              <line x1="0" y1="60" x2="600" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+              <line x1="0" y1="90" x2="600" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+              <!-- Progress curve (upward trend) -->
+              <path d="M0,100 L60,95 L120,88 L180,85 L240,78 L300,72 L360,65 L420,58 L480,50 L540,42 L600,35"
+                fill="none" stroke="#00f2ff" stroke-width="3" stroke-linecap="round" />
+              <!-- Glow effect -->
+              <path d="M0,100 L60,95 L120,88 L180,85 L240,78 L300,72 L360,65 L420,58 L480,50 L540,42 L600,35"
+                fill="none" stroke="rgba(0, 242, 255, 0.3)" stroke-width="8" stroke-linecap="round"
+                filter="blur(4px)" />
+            </svg>
+          </div>
+
+          <!-- SECTION 3: Automated Alerts (2 max) -->
+          <div
+            style="background: rgba(10, 22, 40, 0.5); border: 1px solid rgba(0, 242, 255, 0.1); border-radius: 16px; padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h3 style="font-size: 1rem; color: #fff; margin: 0; font-weight: 700;">Alertes automatiques</h3>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <!-- Alert 1: Thomas B. -->
+              <div
+                style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: rgba(255, 80, 80, 0.08); border: 1px solid rgba(255, 80, 80, 0.2); border-radius: 10px;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <!-- Medical Icon: Pulse/ECG -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width: 28px; height: 28px; flex-shrink: 0;">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                  <div>
+                    <div style="font-size: 0.95rem; color: #fff; font-weight: 600;">Thomas B.</div>
+                    <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Baisse de score (-15%)</div>
+                  </div>
+                </div>
+                <button
+                  style="background: rgba(0, 242, 255, 0.15); border: 1px solid rgba(0, 242, 255, 0.3); color: #00f2ff; padding: 8px 16px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Relancer</button>
+              </div>
+
+              <!-- Alert 2: Marie D. -->
+              <div
+                style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: rgba(255, 200, 80, 0.08); border: 1px solid rgba(255, 200, 80, 0.2); border-radius: 10px;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <!-- Medical Icon: Stethoscope/Medical Cross -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width: 28px; height: 28px; flex-shrink: 0;">
+                    <path d="M12 2v20M2 12h20"></path>
+                  </svg>
+                  <div>
+                    <div style="font-size: 0.95rem; color: #fff; font-weight: 600;">Marie D.</div>
+                    <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Inactive depuis 15j</div>
+                  </div>
+                </div>
+                <button
+                  style="background: rgba(0, 242, 255, 0.15); border: 1px solid rgba(0, 242, 255, 0.3); color: #00f2ff; padding: 8px 16px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Planifier</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA: Export PDF (bottom right) -->
+          <div style="display: flex; justify-content: flex-end;">
+            <button
+              style="display: flex; align-items: center; gap: 10px; background: rgba(0, 242, 255, 0.1); border: 1px solid rgba(0, 242, 255, 0.3); color: #00f2ff; padding: 12px 24px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="width: 18px; height: 18px;">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span>Exporter rapport PDF</span>
+            </button>
+          </div>
+
+        </div>
+
+        <a href="#slide-scenarios" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5" />
+          </svg></a>
+    </section>
+
+
+
+    <!-- SLIDE 6: SCENARIOS -->
+    <div class="kpi-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+        </path>
+      </svg>
+    </div>
+    <div class="kpi-content">
+      <div class="kpi-label">Sessions (30j)</div>
+      <div class="kpi-value">128</div>
+    </div>
+    <div class="kpi-sparkline">
+      <svg viewBox="0 0 60 20" preserveAspectRatio="none">
+        <polyline points="0,15 10,12 20,8 30,10 40,6 50,9 60,5" fill="none" stroke="rgba(0,242,255,0.3)"
+          stroke-width="1.5"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <!-- KPI 2: Temps moyen -->
+  <div class="kpi-card">
+    <div class="kpi-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+    </div>
+    <div class="kpi-content">
+      <div class="kpi-label">Temps moyen</div>
+      <div class="kpi-value">18 min</div>
+    </div>
+    <div class="kpi-sparkline">
+      <svg viewBox="0 0 60 20" preserveAspectRatio="none">
+        <polyline points="0,12 10,14 20,11 30,13 40,10 50,12 60,9" fill="none" stroke="rgba(0,242,255,0.3)"
+          stroke-width="1.5"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <!-- KPI 3: Score cohorte -->
+  <div class="kpi-card">
+    <div class="kpi-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+      </svg>
+    </div>
+    <div class="kpi-content">
+      <div class="kpi-label">Score groupe</div>
+      <div class="kpi-value">7.4<span class="kpi-unit">/10</span></div>
+    </div>
+    <div class="kpi-sparkline">
+      <svg viewBox="0 0 60 20" preserveAspectRatio="none">
+        <polyline points="0,16 10,15 20,14 30,12 40,11 50,9 60,7" fill="none" stroke="rgba(0,242,255,0.5)"
+          stroke-width="1.5"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <!-- KPI 4: Points critiques -->
+  <div class="kpi-card">
+    <div class="kpi-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+    </div>
+    <div class="kpi-content">
+      <div class="kpi-label">Points critiques</div>
+      <div class="kpi-value"><span class="kpi-badge-orange">12</span></div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Dashboard 2 Colonnes (Copié depuis l'ancien slide) -->
+  <div class="dashboard-2col reveal">
+
+    <!-- GAUCHE: Tableau de suivi -->
+    <div class="dashboard-main">
+      <!-- Carte Progression Groupe -->
+      <div class="progress-chart-card">
+        <div class="progress-header">
+          <h3>Progression du groupe</h3>
+          <span class="progress-period">30 derniers jours</span>
+        </div>
+        <div class="mini-chart">
+          <svg viewBox="0 0 300 50" preserveAspectRatio="none">
+            <!-- Bars -->
+            <rect x="10" y="30" width="12" height="20" fill="rgba(0,242,255,0.2)" rx="2" />
+            <rect x="30" y="25" width="12" height="25" fill="rgba(0,242,255,0.25)" rx="2" />
+            <rect x="50" y="20" width="12" height="30" fill="rgba(0,242,255,0.3)" rx="2" />
+            <rect x="70" y="15" width="12" height="35" fill="rgba(0,242,255,0.35)" rx="2" />
+            <rect x="90" y="12" width="12" height="38" fill="rgba(0,242,255,0.4)" rx="2" />
+            <rect x="110" y="10" width="12" height="40" fill="rgba(0,242,255,0.45)" rx="2" />
+            <rect x="130" y="8" width="12" height="42" fill="rgba(0,242,255,0.5)" rx="2" />
+            <rect x="150" y="5" width="12" height="45" fill="rgba(0,242,255,0.55)" rx="2" />
+            <!-- Trend line -->
+            <polyline points="16,40 36,35 56,30 76,25 96,22 116,20 136,18 156,15" fill="none"
+              stroke="var(--primary-cyan)" stroke-width="2" opacity="0.8" />
+          </svg>
+          <div class="chart-value">+18% <span>vs. mois précédent</span></div>
+        </div>
+      </div>
+
+      <!-- Table Card -->
+      <div class="table-card">
+        <div class="table-header-controls">
+          <h3>Tableau de suivi</h3>
+          <div class="table-filters">
+            <button class="filter-chip">Groupe A <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></button>
+            <button class="filter-chip">30 derniers jours <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></button>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="cockpit-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="text" placeholder="Rechercher un apprenant…" readonly />
+        </div>
+
+        <!-- Table Header -->
+        <div class="cockpit-table-header">
+          <div class="col-apprenant">Apprenant</div>
+          <div class="col-tendance">Tendance</div>
+          <div class="col-session">Dernière session</div>
+          <div class="col-competence">Compétence faible</div>
+        </div>
+
+        <!-- Table Rows -->
+        <div class="cockpit-table-rows">
+          <!-- Row 1 -->
+          <div class="cockpit-row">
+            <div class="col-apprenant">
+              <div class="row-avatar">AM</div>
+              <span>Alice M.</span>
+            </div>
+            <div class="col-tendance">
+              <svg class="trend-arrow up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+              <span class="trend-value up">+12%</span>
+            </div>
+            <div class="col-session">
+              <span>Arrêt Card.</span>
+              <span class="session-time">2h</span>
+            </div>
+            <div class="col-competence">—</div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="cockpit-row">
+            <div class="col-apprenant">
+              <div class="row-avatar">TB</div>
+              <span>Thomas B.</span>
+            </div>
+            <div class="col-tendance">
+              <svg class="trend-arrow down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              <span class="trend-value down">-15%</span>
+            </div>
+            <div class="col-session">
+              <span>PolyT</span>
+              <span class="session-time">Hier</span>
+            </div>
+            <div class="col-competence">Surveillance</div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="cockpit-row">
+            <div class="col-apprenant">
+              <div class="row-avatar">SL</div>
+              <span>Sarah L.</span>
+            </div>
+            <div class="col-tendance">
+              <svg class="trend-arrow up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+              <span class="trend-value up">+8%</span>
+            </div>
+            <div class="col-session">
+              <span>Acidocétose</span>
+              <span class="session-time">1j</span>
+            </div>
+            <div class="col-competence">—</div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="cockpit-row">
+            <div class="col-apprenant">
+              <div class="row-avatar">MD</div>
+              <span>Marie D.</span>
+            </div>
+            <div class="col-tendance">
+              <svg class="trend-arrow neutral" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span class="trend-value neutral">0%</span>
+            </div>
+            <div class="col-session">
+              <span>Aucune</span>
+              <span class="session-time inactive">15j</span>
+            </div>
+            <div class="col-competence inactive">Inactivité</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COL: Insights (40%) -->
+    <div class="cockpit-insights">
+      <!-- Alerts Card -->
+      <div class="insights-card alerts-card">
+        <div class="insights-header">
+          <span class="insights-label">
+            <span class="alert-dot-orange"></span>
+            ALERTES & POINTS D'ATTENTION
+          </span>
+          <span class="auto-badge">Auto-détecté</span>
+        </div>
+        <div class="insights-items">
+          <!-- Alert 1 -->
+          <div class="insight-alert critical">
+            <div class="alert-left">
+              <div class="alert-avatar">TB</div>
+              <div class="alert-info">
+                <div class="alert-name">Thomas B.</div>
+                <div class="alert-reason">Baisse de score (-15%)</div>
+              </div>
+            </div>
+            <button class="alert-cta relancer">Relancer</button>
+          </div>
+
+          <!-- Alert 2 -->
+          <div class="insight-alert inactive-alert">
+            <div class="alert-left">
+              <div class="alert-avatar">MD</div>
+              <div class="alert-info">
+                <div class="alert-name">Marie D.</div>
+                <div class="alert-reason">Inactivité > 15j</div>
+              </div>
+            </div>
+            <button class="alert-cta voir">Voir</button>
+          </div>
+
+          <!-- Alert 3 -->
+          <div class="insight-alert recurring">
+            <div class="alert-left">
+              <div class="alert-avatar">JD</div>
+              <div class="alert-info">
+                <div class="alert-name">Julie D.</div>
+                <div class="alert-reason">Erreurs critiques récurrentes</div>
+              </div>
+            </div>
+            <button class="alert-cta relancer">Relancer</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Plan Card -->
+      <div class="insights-card action-card">
+        <div class="insights-header">
+          <span class="insights-label blue">PLAN D'ACTION (SEMAINE)</span>
+        </div>
+        <div class="action-items">
+          <div class="action-bullet">
+            <span class="bullet-dot"></span>
+            <span>Prioriser le débrief sur surveillance (groupe : 6.2)</span>
+          </div>
+          <div class="action-bullet">
+            <span class="bullet-dot"></span>
+            <span>Lancer une session de rattrapage : Surveillance & sécurité</span>
+          </div>
+          <div class="action-bullet">
+            <span class="bullet-dot"></span>
+            <span>Exporter le rapport mensuel (PDF) pour traçabilité</span>
+          </div>
+        </div>
+        <button class="export-pdf-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          <span>Exporter rapport PDF</span>
+        </button>
+      </div>
+
+      <!-- Alignment Card: Satisfaction -->
+      <div class="insights-card">
+        <div class="insights-header" style="margin-bottom: 10px;">
+          <span class="insights-label" style="color: #10b981;">
+            SATISFACTION APPRENANTS
+          </span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span style="font-size: 1.4rem; font-weight: 800; color: #fff; font-family: 'IBM Plex Mono';">4.8</span>
+            <span style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">/5</span>
+          </div>
+          <div style="display: flex; gap: 4px;">
+            <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+            <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+            <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+            <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+            <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24" style="opacity: 0.5;">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+              </path>
+            </svg>
+          </div>
+        </div>
+        <div style="font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-top: 6px;">Basé sur 42
+          retours
+          post-simulation</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  <a href="#slide-scenarios" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+      <path d="M7 10l5 5 5-5" />
+    </svg></a>
+  </section>
+
+
+
+  <!-- SLIDE 6: SCENARIOS -->
+  <section id="slide-scenarios" class="slide pitch-slide">
+    <!-- Universal Premium Background -->
+    <div class="premium-bg">
+      <div class="premium-bg-pattern"></div>
+      <div class="premium-bg-gradient"></div>
+      <div class="premium-bg-noise"></div>
+      <div class="premium-bg-glow"></div>
+    </div>
+    <div class="safe" style="height: 100%; display: flex; flex-direction: column; padding-bottom: 40px;">
+
+      <!-- HEADER STANDARD -->
+      <div class="slide-header" style="flex-shrink: 0; margin-bottom: 16px;">
+        <h2 class="reveal ultra-title" style="margin-bottom: 8px;">Conception de scénarios</h2>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+          <p class="subtitle reveal" style="margin: 0; max-width: 80%;">Du cas clinique réel au module
+            d'entraînement
+            standardisé.</p>
+        </div>
+      </div>
+
+      <div class="slide-content" style="flex: 1; display: flex; flex-direction: column; justify-content: start;">
+
+        <!-- 1. PUBLICS CIBLES (Hero Secondaire - Plus visible) -->
+        <div class="reveal" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
+          <div
+            style="font-size: 0.7rem; color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; font-weight: 700;">
+            Pour qui ?</div>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <!-- Pill 1 -->
+            <div
+              style="display: flex; align-items: center; gap: 10px; padding: 15px 30px; background: rgba(0,242,255,0.08); border: 1px solid rgba(0,242,255,0.4); border-radius: 40px; box-shadow: 0 0 20px rgba(0,242,255,0.1);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+              <div style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="font-size: 1.0rem; color: #fff; font-weight: 700;">URGENCES</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); font-weight: 400; text-transform: uppercase; margin-top: 3px;">Terrain</span>
+              </div>
+            </div>
+            <!-- Pill 2 -->
+            <div
+              style="display: flex; align-items: center; gap: 10px; padding: 15px 30px; background: rgba(0,242,255,0.08); border: 1px solid rgba(0,242,255,0.4); border-radius: 40px; box-shadow: 0 0 20px rgba(0,242,255,0.1);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <rect x="2" y="6" width="20" height="12" rx="2" />
+                <circle cx="12" cy="12" r="2" />
+                <path d="M6 12h.01M18 12h.01" />
+              </svg>
+              <div style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="font-size: 1.0rem; color: #fff; font-weight: 700;">SMUR / SAMU</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); font-weight: 400; text-transform: uppercase; margin-top: 3px;">Pré-hospitalier</span>
+              </div>
+            </div>
+            <!-- Pill 3 -->
+            <div
+              style="display: flex; align-items: center; gap: 10px; padding: 15px 30px; background: rgba(0,242,255,0.08); border: 1px solid rgba(0,242,255,0.4); border-radius: 40px; box-shadow: 0 0 20px rgba(0,242,255,0.1);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <path d="M22 10v6M2 10v6M12 2v20M5 5l14 14M5 19L19 5" />
+              </svg>
+              <div style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="font-size: 1.0rem; color: #fff; font-weight: 700;">IFSI</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); font-weight: 400; text-transform: uppercase; margin-top: 3px;">Formation
+                  initiale</span>
+              </div>
+            </div>
+            <!-- Pill 4 -->
+            <div
+              style="display: flex; align-items: center; gap: 10px; padding: 15px 30px; background: rgba(0,242,255,0.08); border: 1px solid rgba(0,242,255,0.4); border-radius: 40px; box-shadow: 0 0 20px rgba(0,242,255,0.1);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+              </svg>
+              <div style="display: flex; flex-direction: column; line-height: 1;">
+                <span style="font-size: 1.0rem; color: #fff; font-weight: 700;">IFAS</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); font-weight: 400; text-transform: uppercase; margin-top: 3px;">Socle
+                  soins</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TIMELINE (Process Principal - Plus grand) -->
+        <div class="reveal" style="position: relative; padding: 0 20px; margin-bottom: 50px; flex-shrink: 0;">
+          <h4
+            style="font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">
+            Process de conception</h4>
+
+          <!-- Process Line -->
+          <div
+            style="position: absolute; top: 72px; left: 80px; right: 80px; height: 3px; background: linear-gradient(90deg, transparent, rgba(0,242,255,0.5) 15%, rgba(0,242,255,0.5) 85%, transparent); z-index: 0;">
+          </div>
+
+          <div style="display: flex; justify-content: space-between; position: relative; z-index: 1; padding: 0 20px;">
+            <!-- Step 1 -->
+            <div style="text-align: center; width: 140px;">
+              <div
+                style="width: 44px; height: 44px; background: #0b1121; border: 2px solid var(--primary-cyan); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: #fff; box-shadow: 0 0 10px rgba(0,242,255,0.2);">
+                1</div>
+              <strong style="display: block; font-size: 0.95rem; color: #fff; margin-bottom: 4px;">Cas
+                Réels</strong>
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Anonymisation</span>
+            </div>
+            <!-- Step 2 -->
+            <div style="text-align: center; width: 140px;">
+              <div
+                style="width: 44px; height: 44px; background: #0b1121; border: 2px solid var(--primary-cyan); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: #fff; box-shadow: 0 0 10px rgba(0,242,255,0.2);">
+                2</div>
+              <strong style="display: block; font-size: 0.95rem; color: #fff; margin-bottom: 4px;">Design</strong>
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Scénarisation</span>
+            </div>
+            <!-- Step 3 -->
+            <div style="text-align: center; width: 140px;">
+              <div
+                style="width: 44px; height: 44px; background: #0b1121; border: 2px solid var(--primary-cyan); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: #fff; box-shadow: 0 0 10px rgba(0,242,255,0.2);">
+                3</div>
+              <strong style="display: block; font-size: 0.95rem; color: #fff; margin-bottom: 4px;">Validation</strong>
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Review experts</span>
+            </div>
+            <!-- Step 4 -->
+            <div style="text-align: center; width: 140px;">
+              <div
+                style="width: 44px; height: 44px; background: #0b1121; border: 2px solid var(--primary-cyan); border-radius: 50%; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: #fff; box-shadow: 0 0 10px rgba(0,242,255,0.2);">
+                4</div>
+              <strong style="display: block; font-size: 0.95rem; color: #fff; margin-bottom: 4px;">Déploiement</strong>
+              <span style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">LMS & App</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. EXEMPLES (Illustration discret en bas) -->
+        <div class="reveal" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <h3
+              style="font-size: 0.75rem; color: rgba(255,255,255,0.4); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin: 0;">
+              EXEMPLES DE CAS CLINIQUES
+            </h3>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <!-- Mini-Card 1 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(0,242,255,0.2); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 12px;">
+              <div
+                style="background: rgba(0,242,255,0.1); width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--primary-cyan); font-weight: 700; font-size: 0.8rem;">
+                AC</div>
+              <div style="display: flex; flex-direction: column;">
+                <span style="color: #fff; font-weight: 700; font-size: 0.85rem;">ACIDOCÉTOSE</span>
+                <span style="color: rgba(255,255,255,0.6); font-size: 0.7rem;">Mesure clé: Dosage</span>
+              </div>
+            </div>
+            <!-- Mini-Card 2 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(250, 204, 21, 0.2); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 12px;">
+              <div
+                style="background: rgba(250, 204, 21, 0.1); width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #facc15; font-weight: 700; font-size: 0.8rem;">
+                PT</div>
+              <div style="display: flex; flex-direction: column;">
+                <span style="color: #fff; font-weight: 700; font-size: 0.85rem;">POLYTRAUMA</span>
+                <span style="color: rgba(255,255,255,0.6); font-size: 0.7rem;">Mesure clé: Comms</span>
+              </div>
+            </div>
+            <!-- Mini-Card 3 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 8px; padding: 12px; display: flex; align-items: center; gap: 12px;">
+              <div
+                style="background: rgba(74, 222, 128, 0.1); width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #4ade80; font-weight: 700; font-size: 0.8rem;">
+                CS</div>
+              <div style="display: flex; flex-direction: column;">
+                <span style="color: #fff; font-weight: 700; font-size: 0.85rem;">CHOC SEPTIQUE</span>
+                <span style="color: rgba(255,255,255,0.6); font-size: 0.7rem;">Mesure clé: Temps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- slide-content -->
+      <a href="#slide-deploiement" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+  </section>
+
+
+  <section id="slide-deploiement" class="slide pitch-slide">
+    <!-- Universal Premium Background -->
+    <div class="premium-bg">
+      <div class="premium-bg-pattern"></div>
+      <div class="premium-bg-gradient"></div>
+      <div class="premium-bg-noise"></div>
+      <div class="premium-bg-glow"></div>
+    </div>
+    <div class="safe" style="height: 100%; display: flex; flex-direction: column;">
+
+      <!-- Header -->
+      <div class="slide-header" style="flex-shrink: 0; margin-bottom: 10px;">
+        <h2 class="reveal ultra-title" style="margin-bottom: 8px;">Déploiement simple</h2>
+        <p class="subtitle reveal" style="max-width: 100%; margin: 0;">100% web — sans installation — prêt pour
+          les
+          formateurs</p>
+      </div>
+
+      <!-- Pill Banner -->
+      <div class="reveal" style="display: flex; justify-content: center; margin-bottom: 20px; flex-shrink: 0;">
+        <div class="ui-pill-caps" style="box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);">Micro-simulations •
+          Rejouables
+          • Mesurables</div>
+      </div>
+
+      <!-- Main Content Split -->
+      <div class="slide-content"
+        style="flex: 1; display: flex; flex-direction: column; gap: 40px; justify-content: flex-start; padding-top: 10px;">
+
+        <!-- BLOC PRINCIPAL: Intégration dans le parcours -->
+        <!-- BLOC PRINCIPAL: Intégration dans le parcours (Compact & Centré) -->
+        <div class="reveal"
+          style="display: flex; flex-direction: column; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); padding: 25px; align-self: center; width: 100%;">
+          <h3
+            style="font-size: 0.9rem; color: rgba(255,255,255,0.8); font-weight: 700; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; display:flex; align-items:center; gap:10px;">
+            <span
+              style="width:8px; height:8px; background:var(--primary-cyan); border-radius:50%; display:inline-block; box-shadow: 0 0 10px var(--primary-cyan);"></span>
+            Intégration dans le parcours
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+            <!-- Card 1 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span
+                  style="font-size: 0.6rem; background: rgba(0,242,255,0.15); color: var(--primary-cyan); padding: 3px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px;">PRÉPARATION</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.6)"
+                  stroke-width="2">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Avant stage</h4>
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">Bases
+                  &
+                  réflexes (ABCDE)</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span
+                  style="font-size: 0.6rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); padding: 3px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px;">ENTRAÎNEMENT</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.6)"
+                  stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">En TD / service
+                </h4>
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">
+                  Coordination
+                  &
+                  décision</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span
+                  style="font-size: 0.6rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); padding: 3px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px;">CONSOLIDATION</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.6)"
+                  stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Après stage</h4>
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">
+                  Remédiation
+                  ciblée</p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span
+                  style="font-size: 0.6rem; background: rgba(168, 85, 247, 0.15); color: #c084fc; padding: 3px 6px; border-radius: 4px; font-weight: 800; letter-spacing: 0.5px;">LONG-TERME</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.6)"
+                  stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Formation
+                  continue
+                </h4>
+                <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">
+                  Maintien &
+                  traçabilité</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOC SECONDAIRE: Déploiement & cadre (Pills) -->
+        <div class="reveal" style="flex-shrink: 0;">
+          <h4
+            style="font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">
+            Infrastructure & Déploiement</h4>
+          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+            <!-- Bubble 1 -->
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 10px 24px; border: 1px solid rgba(0,242,255,0.3); border-radius: 40px; background: rgba(0,242,255,0.05); box-shadow: 0 0 15px rgba(0,242,255,0.1); transition: all 0.2s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+              <div style="text-align: left;">
+                <div style="font-size: 0.9rem; color: #fff; font-weight: 600;">Accès immédiat</div>
+                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">Lien unique</div>
+              </div>
+            </div>
+
+            <!-- Bubble 2 -->
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 10px 24px; border: 1px solid rgba(0,242,255,0.3); border-radius: 40px; background: rgba(0,242,255,0.05); box-shadow: 0 0 15px rgba(0,242,255,0.1); transition: all 0.2s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <div style="text-align: left;">
+                <div style="font-size: 0.9rem; color: #fff; font-weight: 600;">Données safe</div>
+                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">RGPD & Fictif</div>
+              </div>
+            </div>
+
+            <!-- Bubble 3 -->
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 10px 24px; border: 1px solid rgba(0,242,255,0.3); border-radius: 40px; background: rgba(0,242,255,0.05); box-shadow: 0 0 15px rgba(0,242,255,0.1); transition: all 0.2s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              </svg>
+              <div style="text-align: left;">
+                <div style="font-size: 0.9rem; color: #fff; font-weight: 600;">Kit formateurs</div>
+                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">Auto-formation</div>
+              </div>
+            </div>
+
+            <!-- Bubble 4 -->
+            <div
+              style="display: flex; align-items: center; gap: 12px; padding: 10px 24px; border: 1px solid rgba(0,242,255,0.3); border-radius: 40px; background: rgba(0,242,255,0.05); box-shadow: 0 0 15px rgba(0,242,255,0.1); transition: all 0.2s ease;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+              <div style="text-align: left;">
+                <div style="font-size: 0.9rem; color: #fff; font-weight: 600;">Suivi admin</div>
+                <div style="font-size: 0.7rem; color: rgba(255,255,255,0.5);">Dashboard</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="#slide-implementation" class="scroll-arrow reveal" aria-label="Slide suivante"><svg viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5" />
+      </svg></a>
+  </section>
+
+
+  <!-- SLIDE 6b: IMPLEMENTATION -->
+  <section id="slide-implementation" class="slide pitch-slide">
+    <!-- Universal Premium Background -->
+    <div class="premium-bg">
+      <div class="premium-bg-pattern"></div>
+      <div class="premium-bg-gradient"></div>
+      <div class="premium-bg-noise"></div>
+      <div class="premium-bg-glow"></div>
+    </div>
+    <div class="safe">
+      <div class="slide-header" style="flex-shrink: 0; margin-bottom: 20px;">
+        <h2 class="reveal ultra-title">Lancer un projet pilote avec Doctiplay</h2>
+        <p class="subtitle reveal single-line">3 étapes, sans bouleverser votre organisation.</p>
+      </div>
+
+      <div class="slide-content" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- 3 Steps Grid with Progress Line -->
+        <div class="reveal" style="position: relative; margin-bottom: 30px; margin-top: 50px;">
+          <!-- Progress Line Background -->
+          <div
+            style="position: absolute; top: -45px; left: 15%; right: 15%; height: 2px; background: rgba(255,255,255,0.1); z-index: 0;">
+          </div>
+          <!-- Active Glow Line (Partial) -->
+          <div
+            style="position: absolute; top: -45px; left: 15%; width: 35%; height: 2px; background: linear-gradient(90deg, var(--primary-cyan), transparent); z-index: 0; opacity: 0.6; box-shadow: 0 0 10px var(--primary-cyan);">
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; z-index: 1;">
+
+            <!-- Card 1: Pré-pilote -->
+            <div
+              style="background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(0,242,255,0.4); padding: 25px; display: flex; flex-direction: column; position: relative; box-shadow: 0 0 25px rgba(0,242,255,0.08);">
+              <!-- Step Indicator (Circle) -->
+              <div
+                style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 22px; height: 22px; background: #0b1121; border: 2px solid var(--primary-cyan); border-radius: 50%; z-index: 2; box-shadow: 0 0 15px var(--primary-cyan); display:flex; align-items:center; justify-content:center; color:var(--primary-cyan); font-weight:700; font-size:0.7rem;">
+                1</div>
+
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; margin-top: 10px;">
+                <h3 style="font-size: 1.1rem; color: #fff; font-weight: 700; margin: 0;">Pré-pilote</h3>
+                <span
+                  style="font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; white-space:nowrap;">½
+                  journée</span>
+              </div>
+
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0 0 15px; font-style: italic;">
+                Validation terrain</p>
+
+              <ul class="clean"
+                style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; padding-left: 0; list-style: none;">
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span style="color:var(--primary-cyan);">•</span>
+                  Référent pédagogique</li>
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span style="color:var(--primary-cyan);">•</span>
+                  Créneau test (groupe)</li>
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span style="color:var(--primary-cyan);">•</span>
+                  Go/No-Go</li>
+              </ul>
+            </div>
+
+            <!-- Card 2: Pilote -->
+            <div
+              style="background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); padding: 25px; display: flex; flex-direction: column; position: relative;">
+              <!-- Step Indicator (Circle) -->
+              <div
+                style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 22px; height: 22px; background: #0b1121; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; z-index: 2; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-weight:700; font-size:0.7rem;">
+                2</div>
+
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; margin-top: 10px;">
+                <h3 style="font-size: 1.1rem; color: #fff; font-weight: 700; margin: 0;">Pilote</h3>
+                <span
+                  style="font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; white-space:nowrap;">4
+                  semaines</span>
+              </div>
+
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0 0 15px; font-style: italic;">
+                Déploiement cadré</p>
+
+              <ul class="clean"
+                style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; padding-left: 0; list-style: none;">
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span
+                    style="color:rgba(255,255,255,0.2);">•</span> 3 cas cliniques</li>
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span
+                    style="color:rgba(255,255,255,0.2);">•</span> Promotion / groupes</li>
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span
+                    style="color:rgba(255,255,255,0.2);">•</span> Suivi hebdomadaire</li>
+              </ul>
+            </div>
+
+            <!-- Card 3: Bilan -->
+            <div
+              style="background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); padding: 25px; display: flex; flex-direction: column; position: relative;">
+              <!-- Step Indicator (Circle) -->
+              <div
+                style="position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 22px; height: 22px; background: #0b1121; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; z-index: 2; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-weight:700; font-size:0.7rem;">
+                3</div>
+
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; margin-top: 10px;">
+                <h3 style="font-size: 1.1rem; color: #fff; font-weight: 700; margin: 0;">Bilan</h3>
+                <span
+                  style="font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; white-space:nowrap;">Rapport
+                  d'impact</span>
+              </div>
+
+              <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0 0 15px; font-style: italic;">
+                Perspectives</p>
+
+              <ul class="clean"
+                style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0; padding-left: 0; list-style: none;">
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span
+                    style="color:rgba(255,255,255,0.2);">•</span> Exports PDF</li>
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span
+                    style="color:rgba(255,255,255,0.2);">•</span> Présentation résultats</li>
+                <li style="margin-bottom: 6px; display:flex; gap:8px;"><span
+                    style="color:rgba(255,255,255,0.2);">•</span> Décision extension</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources Block (2 Cols Clean) -->
+        <div class="reveal"
+          style="flex-shrink: 0; margin-top: 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+          <div
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 700px; margin: 0 auto; width: 100%;">
+
+            <!-- Col 1 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <h4
+                style="font-size: 0.75rem; color: rgba(0,242,255,0.8); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 700;">
+                Vous mobilisez</h4>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">Référent</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">1
+                  créneau</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">Salle
+                  PC</span>
+              </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <h4
+                style="font-size: 0.75rem; color: rgba(0,242,255,0.8); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 700;">
+                On fournit</h4>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">Scénarios</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">Support</span>
+                <span
+                  style="font-size: 0.75rem; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">Rapport
+                  + PDF</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <a href="#slide-next-step" class="scroll-arrow reveal" aria-label="Slide suivante">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5" />
+      </svg>
+      <a href="#slide-next-step" class="scroll-arrow reveal" aria-label="Slide suivante">
+        <svg viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5" />
+        </svg>
+      </a>
+  </section>
+
+  <!-- SLIDE SCENARIOS: SCENARIOS SOCLE (Moved) -->
+
+
+
+
+
+
+
+
+
+  <section id="slide-next-step" class="slide pitch-slide">
+    <!-- Universal Premium Background -->
+    <div class="premium-bg">
+      <div class="premium-bg-pattern"></div>
+      <div class="premium-bg-gradient"></div>
+      <div class="premium-bg-noise"></div>
+      <div class="premium-bg-glow"></div>
+    </div>
+    <div class="safe">
+
+      <div class="next-step-header">
+        <h2 class="reveal ultra-title">On en parle ?</h2>
+        <p class="subtitle reveal single-line" style="color: rgba(255,255,255,0.8);">Vos retours de terrain → on
+          ajuste le bon format.</p>
+      </div>
+
+      <div class="slide-content"
+        style="flex: 1; display: flex; flex-direction: column; justify-content: center; position: relative;">
+        <!-- 3 Cartes Simples -->
+        <div class="reveal next-step-cards">
+          <!-- Card 1 -->
+          <div class="next-step-card">
+            <div class="next-step-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Discussion</h3>
+              <p>Vos retours en tant que professionnels de santé (médecins, cadres, chefs de service)</p>
+            </div>
+          </div>
+
+          <!-- Card 2 (Highlight) -->
+          <div class="next-step-card next-step-highlight">
+            <div class="next-step-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-cyan)" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <h3>Démo guidée</h3>
+              <p>30 min + échanges (questions / cas d’usage)</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="next-step-card">
+            <div class="next-step-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3>Proposition</h3>
+              <p>Format pilote / tests / scénarios (sur-mesure)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="reveal next-step-ctas">
+          <a href="mailto:w.smali@wersetech.com" class="btn-contact-classy">CONTACTEZ-NOUS</a>
+          <a href="https://app.doctiplay.com" target="_blank" class="next-step-link">Tester le simulateur</a>
+        </div>
+
+      </div>
+    </div>
+    <a href="#slide-1" class="scroll-arrow reveal" aria-label="Remonter en haut" style="bottom: 20px;">
+      <span style="font-size: 0.5rem; margin-bottom: 5px; opacity: 0.6;">DÉBUT</span>
+      <svg viewBox="0 0 24 24">
+        <path d="M7 14l5-5 5 5" />
+      </svg>
+    </a>
+  </section>
+
+  </div>
+
+
+
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>

@@ -82,12 +82,12 @@
           <div class="hero-text-col">
             <!-- H1 Title -->
             <h1 class="hero-h1 reveal">
-              Simulation clinique<br>interactive,&nbsp;en<br>conditions réelles.
+              Et s'il était possible de gérer 20 arrêts cardiaques...<br>avant d'en voir un vrai ?
             </h1>
 
             <!-- Subtitle -->
             <p class="hero-subtitle reveal">
-              Le patient parle. Vous agissez.<br>Les constantes évoluent en temps réel.
+              Répéter sans limites, avant que ça compte vraiment.
             </p>
 
             <!-- Feature Chips -->
@@ -160,25 +160,45 @@
                   <!-- Monitoring Section -->
                   <div class="simu-monitoring">
                     <div class="simu-monitor-grid"></div>
-                    <div class="simu-monitor-header">
-                      <span class="simu-monitor-label">MONITORING</span>
+                    <div class="simu-monitor-header"
+                      style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="simu-monitor-label">MONITORING</span>
+                        <span
+                          style="background: rgba(255, 50, 50, 0.2); border: 1px solid rgba(255, 50, 50, 0.5); color: #ff3333; font-size: 0.5rem; padding: 2px 6px; border-radius: 4px; font-weight: 800; animation: pulse-red 1s infinite;">ARRÊT
+                          CARDIAQUE</span>
+                      </div>
+                      <span
+                        style="font-family: 'IBM Plex Mono'; font-size: 0.6rem; color: #ff3333; font-weight: 700;">NO
+                        FLOW 01:32</span>
                     </div>
                     <div class="simu-monitor-main">
+                      <!-- Patient Info -->
+                      <div
+                        style="display: flex; justify-content: flex-end; align-items: center; padding: 6px 10px; background: rgba(0,242,255,0.03); border-radius: 6px; margin-bottom: 8px; border-left: 2px solid rgba(0,242,255,0.3);">
+                        <div style="display: flex; gap: 4px;">
+                          <span
+                            style="font-size: 0.5rem; background: rgba(0,242,255,0.12); color: rgba(0,242,255,0.8); padding: 2px 5px; border-radius: 3px; font-weight: 700; font-family: 'IBM Plex Mono';">ADULTE
+                            / ANESTHÉSIE</span>
+                          <span
+                            style="font-size: 0.5rem; background: rgba(0,242,255,0.12); color: rgba(0,242,255,0.8); padding: 2px 5px; border-radius: 3px; font-weight: 700; font-family: 'IBM Plex Mono';">10:45</span>
+                        </div>
+                      </div>
                       <div class="simu-ecg-mini">
                         <div class="simu-ecg-path"></div>
                       </div>
                       <div class="simu-vitals">
                         <div class="simu-vital-item">
-                          <span class="vital-label">FC</span>
-                          <span class="vital-val">102</span>
+                          <span class="vital-label" style="color: #ff3333;">FC</span>
+                          <span class="vital-val" style="color: #ff3333;">---</span>
                         </div>
                         <div class="simu-vital-item">
                           <span class="vital-label">SpO₂</span>
-                          <span class="vital-val">94%</span>
+                          <span class="vital-val" style="color: rgba(255,255,255,0.5);">--</span>
                         </div>
                         <div class="simu-vital-item">
-                          <span class="vital-label">TA</span>
-                          <span class="vital-val">105/65</span>
+                          <span class="vital-label" style="color: #fbbf24;">ETCO₂</span>
+                          <span class="vital-val" style="color: #fbbf24;">10</span>
                         </div>
                       </div>
                     </div>
@@ -186,16 +206,16 @@
 
                   <!-- SBAR Context -->
                   <div class="simu-sbar">
-                    <p class="sbar-text">Douleur thoracique, dyspnée.</p>
-                    <span class="sbar-bold">Objectif : prioriser, traiter, sécuriser.</span>
+                    <p class="sbar-text">Patient inconscient, pas de pouls.</p>
+                    <span class="sbar-bold">Objectif : RCP immédiate, défibrillation, sécuriser.</span>
                   </div>
 
                   <!-- Action Pills Grouped -->
                   <div class="simu-actions">
                     <div class="simu-actions-left">
-                      <div class="simu-pill">O₂</div>
-                      <div class="simu-pill">IV</div>
-                      <div class="simu-pill">Rx</div>
+                      <div class="simu-pill">Dossier clinique</div>
+                      <div class="simu-pill">Paramédical</div>
+                      <div class="simu-pill">Traumatisation</div>
                     </div>
 
                     <div class="simu-actions-sep"></div>
@@ -248,10 +268,10 @@
 
       <div class="safe">
         <div class="intro-hero-content">
-          <h2 class="intro-hero-title reveal">Comment massifier l'accès à la simulation médicale dans un contexte de
-            ressources limitées ?</h2>
-          <p class="intro-hero-subtitle reveal">Dépendance aux plateaux techniques, disponibilité des formateurs,
-            difficulté à standardiser : un défi structurel.</p>
+          <h2 class="intro-hero-title reveal">Mais aujourd'hui, impossible de s'entraîner suffisamment
+          </h2>
+          <p class="intro-hero-subtitle reveal">Accès limité aux simulateurs, créneaux rares, peu de répétitions : la
+            courbe d'apprentissage dépend du hasard.</p>
           <p class="intro-hero-punch reveal">L’enjeu : une <span class="accent-cyan">haute fidélité</span> rejouable,
             accessible, mesurable.</p>
         </div>
@@ -703,22 +723,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Points critiques -->
-              <div
-                style="background: rgba(255,68,68,0.04); border-left: 2px solid rgba(255,68,68,0.4); padding: 12px; border-radius: 8px;">
-                <div
-                  style="font-size: 0.65rem; color: rgba(255,107,107,0.9); font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.08em;">
-                  Points critiques</div>
-                <div style="display: flex; flex-direction: column; gap: 5px;">
-                  <div style="font-size: 0.75rem; color: rgba(255,255,255,0.85); line-height: 1.4;">
-                    • Délai scope ECG : risque arythmie
-                  </div>
-                  <div style="font-size: 0.75rem; color: rgba(255,255,255,0.85); line-height: 1.4;">
-                    • Réévaluation tardive post-insuline
-                  </div>
-                </div>
-              </div>
             </div>
 
             <!-- Card 2: Synthèse prête à partager -->
@@ -728,7 +732,7 @@
                 style="font-size: 1rem; color: var(--primary-cyan); font-weight: 800; margin: 0 0 14px 0; font-family: 'IBM Plex Mono'; letter-spacing: 0.05em;">
                 SYNTHÈSE PRÊTE À PARTAGER</h3>
 
-              <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; flex-direction: column; gap: 10px;">
 
                 <!-- Item 1 -->
                 <div style="display: flex; align-items: start; gap: 12px;">
@@ -783,11 +787,7 @@
                     <div style="font-size: 0.8rem; color: #fff; font-weight: 600; margin-bottom: 3px;">Export PDF
                     </div>
                     <div style="font-size: 0.68rem; color: rgba(255,255,255,0.6); line-height: 1.4;">Rapport
-                      partageable
-                    </div>
-                    <div
-                      style="font-size: 0.6rem; color: rgba(255,255,255,0.35); margin-top: 4px; font-style: italic; line-height: 1.3;">
-                      Portfolio / dossier apprenant / traçabilité interne</div>
+                      partageable</div>
                   </div>
                 </div>
 
@@ -907,30 +907,6 @@
 
             <!-- GAUCHE: Tableau de suivi -->
             <div class="dashboard-main">
-              <!-- Carte Progression Groupe -->
-              <div class="progress-chart-card">
-                <div class="progress-header">
-                  <h3>Progression du groupe</h3>
-                  <span class="progress-period">30 derniers jours</span>
-                </div>
-                <div class="mini-chart">
-                  <svg viewBox="0 0 300 50" preserveAspectRatio="none">
-                    <!-- Bars -->
-                    <rect x="10" y="30" width="12" height="20" fill="rgba(0,242,255,0.2)" rx="2" />
-                    <rect x="30" y="25" width="12" height="25" fill="rgba(0,242,255,0.25)" rx="2" />
-                    <rect x="50" y="20" width="12" height="30" fill="rgba(0,242,255,0.3)" rx="2" />
-                    <rect x="70" y="15" width="12" height="35" fill="rgba(0,242,255,0.35)" rx="2" />
-                    <rect x="90" y="12" width="12" height="38" fill="rgba(0,242,255,0.4)" rx="2" />
-                    <rect x="110" y="10" width="12" height="40" fill="rgba(0,242,255,0.45)" rx="2" />
-                    <rect x="130" y="8" width="12" height="42" fill="rgba(0,242,255,0.5)" rx="2" />
-                    <rect x="150" y="5" width="12" height="45" fill="rgba(0,242,255,0.55)" rx="2" />
-                    <!-- Trend line -->
-                    <polyline points="16,40 36,35 56,30 76,25 96,22 116,20 136,18 156,15" fill="none"
-                      stroke="var(--primary-cyan)" stroke-width="2" opacity="0.8" />
-                  </svg>
-                  <div class="chart-value">+18% <span>vs. mois précédent</span></div>
-                </div>
-              </div>
 
               <!-- Table Card -->
               <div class="table-card">
@@ -1100,80 +1076,29 @@
                 </div>
               </div>
 
-              <!-- Action Plan Card -->
-              <div class="insights-card action-card">
-                <div class="insights-header">
-                  <span class="insights-label blue">PLAN D'ACTION (SEMAINE)</span>
+              <!-- Carte Progression Groupe -->
+              <div class="progress-chart-card">
+                <div class="progress-header">
+                  <h3>Progression du groupe</h3>
+                  <span class="progress-period">30 derniers jours</span>
                 </div>
-                <div class="action-items">
-                  <div class="action-bullet">
-                    <span class="bullet-dot"></span>
-                    <span>Prioriser le débrief sur surveillance (groupe : 6.2)</span>
-                  </div>
-                  <div class="action-bullet">
-                    <span class="bullet-dot"></span>
-                    <span>Lancer une session de rattrapage : Surveillance & sécurité</span>
-                  </div>
-                  <div class="action-bullet">
-                    <span class="bullet-dot"></span>
-                    <span>Exporter le rapport mensuel (PDF) pour traçabilité</span>
-                  </div>
-                </div>
-                <button class="export-pdf-btn">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                <div class="mini-chart">
+                  <svg viewBox="0 0 300 50" preserveAspectRatio="none">
+                    <!-- Bars -->
+                    <rect x="10" y="30" width="12" height="20" fill="rgba(0,242,255,0.2)" rx="2" />
+                    <rect x="30" y="25" width="12" height="25" fill="rgba(0,242,255,0.25)" rx="2" />
+                    <rect x="50" y="20" width="12" height="30" fill="rgba(0,242,255,0.3)" rx="2" />
+                    <rect x="70" y="15" width="12" height="35" fill="rgba(0,242,255,0.35)" rx="2" />
+                    <rect x="90" y="12" width="12" height="38" fill="rgba(0,242,255,0.4)" rx="2" />
+                    <rect x="110" y="10" width="12" height="40" fill="rgba(0,242,255,0.45)" rx="2" />
+                    <rect x="130" y="8" width="12" height="42" fill="rgba(0,242,255,0.5)" rx="2" />
+                    <rect x="150" y="5" width="12" height="45" fill="rgba(0,242,255,0.55)" rx="2" />
+                    <!-- Trend line -->
+                    <polyline points="16,40 36,35 56,30 76,25 96,22 116,20 136,18 156,15" fill="none"
+                      stroke="var(--primary-cyan)" stroke-width="2" opacity="0.8" />
                   </svg>
-                  <span>Exporter rapport PDF</span>
-                </button>
-              </div>
-
-              <!-- Alignment Card: Satisfaction -->
-              <div class="insights-card">
-                <div class="insights-header" style="margin-bottom: 10px;">
-                  <span class="insights-label" style="color: #10b981;">
-                    SATISFACTION APPRENANTS
-                  </span>
+                  <div class="chart-value">+18% <span>vs. mois précédent</span></div>
                 </div>
-                <div style="display: flex; align-items: center; justify-content: space-between;">
-                  <div style="display: flex; align-items: baseline; gap: 6px;">
-                    <span
-                      style="font-size: 1.4rem; font-weight: 800; color: #fff; font-family: 'IBM Plex Mono';">4.8</span>
-                    <span style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">/5</span>
-                  </div>
-                  <div style="display: flex; gap: 4px;">
-                    <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                      </path>
-                    </svg>
-                    <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                      </path>
-                    </svg>
-                    <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                      </path>
-                    </svg>
-                    <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                      </path>
-                    </svg>
-                    <svg width="16" height="16" fill="#fbbf24" viewBox="0 0 24 24" style="opacity: 0.5;">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                      </path>
-                    </svg>
-                  </div>
-                </div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.4); margin-top: 6px;">Basé sur 42
-                  retours
-                  post-simulation</div>
               </div>
             </div>
           </div>
@@ -1203,9 +1128,8 @@
         <div class="slide-header" style="flex-shrink: 0; margin-bottom: 16px;">
           <h2 class="reveal ultra-title" style="margin-bottom: 8px;">Conception de scénarios</h2>
           <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-            <p class="subtitle reveal" style="margin: 0; max-width: 80%;">Du cas clinique réel au module
-              d'entraînement
-              standardisé.</p>
+            <p class="subtitle reveal" style="margin: 0; max-width: 80%;">On co-construit avec vos experts, vous gardez
+              le contrôle qualité.</p>
           </div>
         </div>
 
@@ -1281,7 +1205,7 @@
           <div class="reveal" style="position: relative; padding: 0 20px; margin-bottom: 50px; flex-shrink: 0;">
             <h4
               style="font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px;">
-              Process de conception</h4>
+              Comment ça marche</h4>
 
             <!-- Process Line -->
             <div
@@ -1395,10 +1319,9 @@
 
         <!-- Header -->
         <div class="slide-header" style="flex-shrink: 0; margin-bottom: 10px;">
-          <h2 class="reveal ultra-title" style="margin-bottom: 8px;">Déploiement simple</h2>
-          <p class="subtitle reveal" style="max-width: 100%; margin: 0;">100% web — sans installation — prêt pour
-            les
-            formateurs</p>
+          <h2 class="reveal ultra-title" style="margin-bottom: 8px;">Intégrez Doctiplay dans vos parcours existants</h2>
+          <p class="subtitle reveal" style="max-width: 100%; margin: 0;">100% web — zéro installation — prêt à l'emploi
+          </p>
         </div>
 
         <!-- Pill Banner -->
@@ -1437,10 +1360,10 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Avant stage</h4>
-                  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">Bases
-                    &
-                    réflexes (ABCDE)</p>
+                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Répétitions des gestes
+                    de base</h4>
+                  <p style="font-size: 0.7rem; color: rgba(0,242,255,0.7); margin: 0; line-height: 1.3;">ABCDE, poses de
+                    VVP</p>
                 </div>
               </div>
               <!-- Card 2 -->
@@ -1457,12 +1380,11 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">En TD / service
+                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Cas complexes avec
+                    débrief
                   </h4>
-                  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">
-                    Coordination
-                    &
-                    décision</p>
+                  <p style="font-size: 0.7rem; color: rgba(0,242,255,0.7); margin: 0; line-height: 1.3;">ACR, polytrauma
+                  </p>
                 </div>
               </div>
               <!-- Card 3 -->
@@ -1478,10 +1400,10 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Après stage</h4>
-                  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">
-                    Remédiation
-                    ciblée</p>
+                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Remédiation ciblée
+                  </h4>
+                  <p style="font-size: 0.7rem; color: rgba(0,242,255,0.7); margin: 0; line-height: 1.3;">Points faibles
+                    identifiés</p>
                 </div>
               </div>
               <!-- Card 4 -->
@@ -1496,12 +1418,11 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Formation
-                    continue
+                  <h4 style="font-size: 0.95rem; color: #fff; margin: 0 0 4px; font-weight: 700;">Maintien des
+                    compétences
                   </h4>
-                  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.3;">
-                    Maintien &
-                    traçabilité</p>
+                  <p style="font-size: 0.7rem; color: rgba(0,242,255,0.7); margin: 0; line-height: 1.3;">Traçabilité
+                    réglementaire</p>
                 </div>
               </div>
             </div>
